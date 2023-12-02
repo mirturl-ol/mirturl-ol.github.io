@@ -1,0 +1,627 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="perfume.css">
+  <link rel="stylesheet" href="perfume-largescreen.css">
+  <title>Perfume</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+body{
+  font-size:16px;
+  margin:-0.2px;
+  font-family: "Open Sans", "Gill Sans MT","Calibri Light", sans-serif;
+  overflow-x:hidden;
+}
+a{
+  color:black;
+  text-transform:uppercase;
+  text-decoration:underline;
+}
+address{
+  width:90vw;
+  font-style:normal;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+}
+button{
+  border:none;
+  font-size:1.2em;
+}
+footer{
+  background-color:black;
+  color:white;
+  padding:2em;
+  display:flex;
+  justify-content:space-around;
+}
+form button{
+  display:block;
+  margin-top:0.75em;
+  color:white;
+  background-color:black;
+  border-bottom:3px solid pink;
+  padding:0.4em;
+  transition:box-shadow 0.4s;
+}
+form button:hover{
+  box-shadow: inset 0 0 0 1000px pink;
+}
+input[type=email]{
+  margin-bottom:1em;
+  padding:0.2em;
+  background-color:black;
+  border-radius:10px;
+  font-size:1em;
+  font-family:"Open Sans","Calibri Light",sans-serif;
+}
+input[type=checkbox]{
+  filter: invert(100%) hue-rotate(18deg) brightness(2) saturate(20%);
+}
+h1,h2,button,nav p,.activity-text a{
+  font-family:Georgia;
+  font-weight:normal;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+}
+h1{
+  display:inline-block;
+  border-bottom:3px solid pink;
+  padding-bottom:20px;
+}
+h2{
+  font-size:2em;
+}
+header{
+  height:75vh;
+  max-height:800px;
+  background: fixed no-repeat url(https://i.pinimg.com/originals/1b/f0/2f/1bf02f96cc6c721281be219edff4d24a.png);
+  background-size:120vw;
+}
+header p{
+  font-family:Georgia, serif;
+  font-style:italic;
+  margin-top:-0.75vh;
+}
+main{
+  padding:10px 0 50px 0;
+  background-color:white;
+  box-shadow:0 -20px 10vh black;
+}
+nav{
+  position:fixed;
+  display:none;
+  width:100vw;
+  background-color:white;
+  box-shadow:0 3px 10px silver;
+  padding:0 1em;
+  color:black;
+}
+nav p{
+  font-size:1.8em;
+}
+p{
+  line-height:1.25em;
+}
+section{
+  margin-top:4em;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 1em 0.5em;
+}
+table a{
+  color:white;
+  text-decoration:none;
+}
+table a:hover{
+  color:lemonchiffon;
+}
+
+.vertically-center{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:start;
+}
+.header-info-wrapper{
+  min-height:15vh;
+  background-color:black;
+  padding:1em 1em 1em;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+}
+.dropdown{
+  position:absolute;
+  right:2em;
+  top:2em;
+  text-align:right;
+}
+.dropdown-icon{
+  font-size:2em;
+  color:pink;
+}
+.dropdown-menu{
+  display:none;
+  margin-top:0.5em;
+}
+.dropdown-menu a{
+  display:block;
+  background-color:white;
+  padding:0.5em;
+  text-align:center;
+  text-decoration:none;
+  transition:background-color 0.1s;
+}
+.dropdown-menu a:hover{
+  background-color:lemonchiffon;
+}
+.dropdown-icon:hover{
+  color:lemonchiffon;
+}
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
+
+.tiles-container{
+  width:90vw;
+  margin:50px auto 0 auto;
+  font-size:1.3em;
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  grid-template-columns:1fr 1fr;
+}
+.tiles-container div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.tiles-container div p{
+  font-size:16px;
+}
+.tiles-container div a{
+  text-decoration:none;
+}
+.tile{
+  width:35vw;
+  height:35vw;
+  min-width:6em;
+  min-height:6em;
+  
+  background-size:100%;
+  background-repeat:no-repeat;
+  border-radius:10%;
+  
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.tile span{
+  color:white;
+  text-transform:uppercase;
+  text-decoration:none;
+  letter-spacing:0.1em;
+  opacity:0;
+  transition:opacity 0.4s;
+}
+.featured-tile{
+  background-image:url(https://cdn.shopify.com/s/files/1/1338/0845/collections/LuxLSCategoryPage_550x.jpg?v=1557862845);
+}
+.skin-care-tile{
+  background-image:url(https://cdn.shopify.com/s/files/1/0203/8454/products/PCJarw_Texture.jpg?v=1627341683);
+}
+.makeup-tile{
+  background-image:url(https://i.pinimg.com/564x/4f/1c/31/4f1c3164d1dd914c089e1a9b4684efa6.jpg);
+}
+.perfume-tile{
+  background-image: url(https://64.media.tumblr.com/a3463d5e5e7496f11d49619ac796d1a5/499d6e5ab5534136-ff/s1280x1920/528c0e620712ce55172a5de8f57c731982871416.jpg);
+}
+.tile{
+  transition:box-shadow 0.3s;
+}
+.tile:hover{
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+}
+.tile:hover span{
+  opacity:1;
+}
+
+.feature{
+  width:80vw;
+  padding:0 10vw 0 10vw;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.feature>*{
+  padding-bottom:2em;
+}
+.feature h2{
+  margin-block-end:0;
+  order:-1;
+}
+.feature img{
+  width:80vw;
+}
+.feature button{
+  padding:20px 1em 20px 1em;
+  background-image:linear-gradient(45deg,lemonchiffon,pink);
+  transition:box-shadow 0.3s;
+}
+.feature button:hover{
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.6);
+}
+
+.activity{
+  background-color:black;
+  color:white;
+  min-height:60vw;
+}
+.activity img{
+  width:40vw;
+}
+.activity-text{
+  float:right;
+  width:47vw;
+  height:60vw;
+  margin:-1em 6vw 0 0;
+  font-weight:300;
+  letter-spacing:0.02em;
+}
+.activity-text a{
+  border-bottom:3px solid pink;
+  padding-bottom:2px;
+  color:white;
+  text-decoration:none;
+  transition:border-bottom 0.2s;
+}
+.activity-text a:hover{
+  border-bottom:3px solid lemonchiffon;
+}
+
+.quote{
+  
+  margin:1em 10vw;
+  overflow-x:scroll;
+  padding-bottom:2.5em;
+  font-family:Georgia,serif;
+  display:flex;
+}
+.quote div{
+  margin-right:2em;
+  width:80vw;
+}
+.quote::-webkit-scrollbar {
+  height: 5px;
+}
+.quote::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 5px;
+}
+.quote-content:before{
+  content:"\201C";
+  margin:auto;
+  display:block;
+  font-size:4em;
+  position: relative;
+  width: 0.1px;
+  left: 50%;
+  margin-left: -0.1em;
+}
+.quote-content{
+  width:80vw;
+  padding-top:2.5em;
+  text-align:center;
+  font-family:Georgia, serif;
+  font-size:1.7em;
+}
+.quote-attribution{
+  width:80%;
+  margin:auto;
+  font-size:1.2em;
+  text-align:center;
+}
+.footer-left{
+  width:50vw;
+}
+.footer-left p{
+  font-size:1.4em;
+  font-family:Georgia, serif;
+}
+.footer-right{
+  width:30vw;
+  padding-top:1.2em;
+}
+@media only screen
+  and (max-device-width: 700px)
+  and (-webkit-min-device-pixel-ratio: 2){
+  nav{
+    display:hidden;
+  }
+  header{
+    background-position:0% 30%;
+    min-height:70vh;
+    background-size:150%;
+  }
+  body{
+    font-size:200%;
+  }
+  .feature p{
+    font-size:70%;
+  }
+  .header-info-wrapper p{
+    font-size:100%;
+  }
+  .tiles-container div p{
+    font-size:80%;
+  }
+  table a{
+    font-size:0.85em;
+  }
+}
+@media only screen
+  and (max-device-width: 376px)
+  and (-webkit-min-device-pixel-ratio: 2){
+  .feature p{
+    font-size:47.5%;
+  }
+}
+@media only screen
+  and (max-device-width: 325px)
+  and (-webkit-min-device-pixel-ratio: 2){
+  .feature p{
+    font-size:42.5%;
+  }
+}
+@media only screen
+  and (min-device-width:700px)
+  and (min-width:700px)
+  and (-webkit-min-device-pixel-ratio: 1){
+  nav{
+    display:initial;
+  }
+  header{
+    background-size:100vw;
+    height:70vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .header-info-wrapper{
+    width:40vw;
+    height:35vh;
+    padding:3vw;
+    margin:4em 0 0 45vw;
+    background-color:white;
+    color:black;
+  }
+  .header-info,address{
+    width:38vw;
+  }
+  .header-info{
+    margin-top:-2em;
+  }
+  .dropdown{
+    position:fixed;
+    top:1.3em;
+  }
+  .dropdown-icon{
+    display:none;
+  }
+  .dropdown-menu{
+    width:50vw;
+    display:block;
+  }
+  .dropdown-menu a{
+    display:inline-block;
+    text-align:center;
+  }
+  .tiles-container{
+    width:85vw;
+    grid-template-rows:1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+  }
+  .tile{
+    width:14vw;
+    height:14vw;
+  }
+  .feature img{
+    width:60vw;
+  }
+  .activity{
+    min-height:40vw;
+  }
+  .activity img{
+    width:30vw;
+    margin:0 3vw 0 10vw;
+  }
+  .activity-text{
+    width:40vw;
+    height:40vw;
+    margin:1em 8vw 0 0;
+  }
+  .activity-text a{
+    display:block;
+    width:3.7em;
+    margin-top:1.5em;
+    font-size:1.4em;
+  }
+  .quote-content{
+    width:45vw;
+  }
+  .quote-attribution{
+    width:40vw;
+  }
+}
+@media only screen
+  and (min-device-width:1024px)
+  and (min-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1){
+  nav{
+    text-align:center;
+  }
+  .header-info-wrapper{
+    width:30vw;
+    margin:10vh 0 0 55vw;
+  }
+  .header-info,address{
+    width:28vw;
+  }
+  .tiles-container{
+    width:75vw;
+  }
+  .feature {
+    text-align:left;
+    display:grid;
+    justify-items:left;
+    grid-template-columns:4fr 6fr;
+    grid-template-rows:auto;
+    grid-template-areas:"heading picture" "intro picture" "btn picture";
+  }
+  .feature>* {
+    padding-bottom: 0;
+  }
+  .feature h2{
+    grid-area:heading;
+  }
+  .feature p{
+    grid-area:intro;
+  }
+  .feature button{
+    grid-area:btn;
+  }
+  .feature img{
+    grid-area:picture;
+    width:50vw;
+    height:auto;
+    margin-left:5vw;
+  }
+  .activity{
+    min-height:30vw;
+  }
+  .activity img{
+    width:20vw;
+    margin:0 3vw 0 15vw;
+  }
+  .activity-text{
+    width:35vw;
+    height:30vw;
+    margin:0 15vw 0 0;
+  }
+  .quote{
+    overflow:visible;
+  }
+  .quote-content{
+    width:25vw;
+  }
+  .quote-attribution{
+    width:20vw;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <nav>
+    <p>Rosemary</p>
+  </nav>
+  <header>
+    <div class="header-info-wrapper">
+      <div class="header-info vertically-center">
+        <h1>Rosemary</h1>
+        <p>Premium Cosmetics & Perfume. Since 19XX. lorem ipsum dolor quid</p>
+        <address>ins: @irisnviolets | git: @irisssschen</address>
+      </div>
+      <div class="dropdown">
+        <span class="dropdown-icon">&#9776;</span>
+        <div class="dropdown-menu">
+          <a href="#">Featured</a>
+          <a href="#">Limited</a>
+          <a href="#">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="tiles-container">
+      <div>
+        <a href="#"><div class="tile featured-tile"><span>Shop</span></div></a>
+        <p>Featured</p>
+      </div>
+      <div>
+        <a href="#"><div class="tile skin-care-tile"><span>Shop</span></div></a>
+        <p>Skin Care</p>
+      </div>
+      <div>
+        <a href="#"><div class="tile makeup-tile"><span>Shop</span></div></a>
+        <p>Makeup</p>
+      </div>
+      <div>
+        <a href="#"><div class="tile perfume-tile"><span>Shop</span></div></a>
+        <p>Perfume</p>
+      </div>
+    </section>
+    <section class="feature">
+      <img src="https://leoncechenal.com/wp-content/uploads/2021/01/best_french_iconic_perfumes.png" alt="feature-perfume">
+      <h2>Feature</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur nisl sed quam eleifend ultricies. Suspendisse vel massa at lectus molestie interdum. Nunc condimentum, ante in malesuada facilisis, tellus leo dictum enim, in fringilla massa elit a erat. </p>
+      <button>More</button>
+    </section>
+    <section class="activity">
+      <img src="http://mms1.baidu.com/it/u=3495342105,3615635982&fm=253&app=138&f=JPEG?w=500&h=750" alt="activity-gothic-style">
+      <div class="activity-text vertically-center">
+        <h2>Activity</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur nisl sed quam eleifend ultricies. Suspendisse vel massa at lectus molestie interdum. Nunc condimentum, ante in malesuada facilisis. <a href="#">Start</a></p>
+      </div>
+    </section>
+    <section class="quote">
+      <div>
+        <p class="quote-content"><span class="quotation-mark">&ldquo;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur nisl sed quam eleifend ultricies.<span class="quotation-mark">&rdquo;</span></p>
+        <p class="quote-attribution">-- John Li, expert in cosmetics</p>
+      </div>
+      <div>
+        <p class="quote-content"><span class="quotation-mark">&ldquo;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur nisl sed quam eleifend ultricies.<span class="quotation-mark">&rdquo;</span></p>
+        <p class="quote-attribution">-- John Li, expert in cosmetics</p>
+      </div>
+      <div>
+        <p class="quote-content"><span class="quotation-mark">&ldquo;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur nisl sed quam eleifend ultricies.<span class="quotation-mark">&rdquo;</span></p>
+        <p class="quote-attribution">-- John Li, expert in cosmetics</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-left">
+      <p>Connect with us! Sign up for Email updates.</p>
+      <form>
+        <input id="email" type="email" placeholder="Email" required>
+        <br>
+        <input type="checkbox" id="discounts" name="get-discounts" value="true" checked>
+        <label for="discounts">Get our discount coupons!</label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="footer-right">
+      <table>
+        <tr>
+          <td><a>Account</a></td>
+          <td><a>FAQ</a></td>
+        </tr>
+        <tr>
+          <td><a>Payment Methods</a></td>
+          <td><a>Shipping Options</a></td>
+        </tr>
+        <tr>
+          <td><a>Career</a></td>
+          <td><a>Privacy</a></td>
+        </tr>
+        <tr>
+          <td><a>Learn More</a></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </footer>
+</body>
+</html>
