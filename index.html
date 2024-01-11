@@ -50,7 +50,7 @@
         font-size:36px;
     }
     header{
-        margin-top:90px;
+        margin-top:60px;
         width:100vw;
         height:70vh;
         min-height:500px;
@@ -70,20 +70,23 @@
     nav{
         display:flex;
         justify-content:center;
+        align-items:center;
         position:fixed;
         top:0;
         z-index:999;
         width:100vw;
-        padding:10px;
+        padding:0 10px;
         background-color:white;
         box-shadow:0 3px 10px silver;
         text-align:center;
     }
     nav img{
         display:block;
+        width:50px;
+        height:50px;
     }
     nav p{
-        font-size:24px;
+        font-size:20px;
         margin-left:20px;
     }
     strong{
@@ -111,7 +114,7 @@
         }
         h1{
             text-align:left;
-            font-size:64px;
+            font-size:60px;
         }
         h2{
             font-size:48px;
@@ -154,7 +157,7 @@
 </head>
 <body>
     <nav>
-        <img src="logo.png" alt="MOL Logo" width="70">
+        <img src="logo.png" alt="MOL Logo" width="50">
         <p>MOL半咸水语言学公开赛</p>
     </nav>
     <header class="vertically-center">
@@ -204,5 +207,6 @@
     const targetDate = new Date("2024-01-28T16:00:00");
     const dayLeft = Math.floor((targetDate.getTime()-currentDate.getTime())/86400000);
     countdown.textContent = dayLeft;
+    countdown.style.color = '#467e90';
 </script>
 </html>
