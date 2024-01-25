@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="prefetch" href="https://static2.deeperblue.com/wp-content/uploads/2017/12/AdobeStock_77464741-scaled.jpeg" />
 
 	<style>
     .vertically-center{
@@ -26,7 +27,11 @@
         font-family:"Noto Sans SC", sans-serif;
         overflow-x:hidden;
 	}
+    figure{
+        margin:5px;
+    }
     footer{
+        margin-top:20px;
         border-top:2px solid black;
         padding-top:30px;
         color:#48a7a3;
@@ -54,7 +59,7 @@
         width:100vw;
         height:70vh;
         min-height:500px;
-        background-image:url("header.png");
+        background-image:url("https://static2.deeperblue.com/wp-content/uploads/2017/12/AdobeStock_77464741-scaled.jpeg");
         background-repeat:no-repeat;
         background-size:auto 100vh;
         background-position:center;
@@ -75,8 +80,8 @@
         top:0;
         z-index:999;
         width:100vw;
-        padding:0 10px;
         background-color:white;
+        padding:0 10px;
         box-shadow:0 3px 10px silver;
         text-align:center;
     }
@@ -88,6 +93,10 @@
     nav p{
         font-size:20px;
         margin-left:20px;
+    }
+    p{
+        text-align: justify;
+        text-justify: inter-word;
     }
     strong{
         color:#86b4c4;
@@ -104,6 +113,10 @@
         text-align:center;
     }
     #qr-code{
+        display:flex;
+        flex-direction:row;
+        width:410px;
+        margin-left:20px;
         text-align:center;
         color:#86b4c4;
     }
@@ -143,15 +156,6 @@
         #contest-content{
             display:flex;
         }
-        #qr-code figcaption{
-            position:relative;
-            right:300px;
-            bottom:40px;
-        }
-        #qr-code figcaption::after{
-            content:'  ▶';
-            color:#86b4c4;
-        }
     }
 	</style>
 </head>
@@ -171,12 +175,12 @@
         <h2>关于我们</h2>
         <div id="about-content">
             <div>
-                <h3>什么是MOL半咸水语言学公开赛？</h3>
-                <p><strong>MOL(Mirturl Linguistics Open)</strong>是由2023年国际语言学奥林匹克竞赛中国国家队自主组织的<strong>语言学公开挑战赛</strong>。本比赛采取<strong>线上进行</strong>的形式，不设任何年龄或年级限制，不收取任何报名费用，<strong>无任何参赛门槛</strong>，旨在向社会推广语言学这一多元多彩的学科。
+                <h3>MOL是什么？</h3>
+                <p><strong>MOL(Mirturl Linguistics Open，半咸水语言学公开赛)</strong>是由2023年国际语言学奥林匹克竞赛中国国家队自主组织的<strong>语言学公开挑战赛</strong>。本比赛采取<strong>线上进行</strong>的形式，不设任何年龄或年级限制，不收取任何报名费用，<strong>无任何参赛门槛</strong>，旨在向社会推广语言学这一多元多彩的学科。
                 </p>
             </div>
             <div>
-                <h3>为什么要叫“半咸水”语言公开赛？</h3>
+                <h3>“半咸水”是什么？</h3>
                 <p>“半咸水”是出现在<strong>IOL2023团队题</strong>“Murrinh-Patha语”中的一个词，在该语言中为<strong>"Mirturl"</strong>，给队员们留下了深刻的印象。“半咸水”还象征着我们来自的土地：<strong>长江下游入海口</strong>，淡水与咸水交汇之地。这个词汇就像妙趣横生的语言一样，传递着一群人的历史与文化，表达着一群人的思想与生命。 </p>
             </div>
             <div>
@@ -190,13 +194,20 @@
                 <p>第一届MOL暂定于<strong>1月29日至2月4日</strong>举办。届时，题目将会<strong>以PDF格式公布于此站上</strong>。选手可以选择使用<strong>问卷星或邮箱</strong>的形式，拍照或扫描提交答卷。尽管我们的题目<strong>推荐用时</strong>与IOLC相同，大约在5个小时左右，但<strong>所有提交入口均会开启一周</strong>，以给予选手充分的时间完成比赛。</p>
                 <p>提交截止一段时间后，MOL官方会将批改完毕的卷子<strong>以邮箱的方式发给各位选手</strong>，并在官网上<strong>公布答案及解析</strong>。成绩靠前的选手的分数也将会在官网上公布。 </p>
             </div>
-            <figure id="qr-code" class="horizontally-center">
-                <img src="qr-code.jpg" alt="QR Code" width="400">
-                <figcaption>加入MOL微信群，关注最新动态</figcaption>
-            </figure>
+            <div id="qr-code" class="horizontally-center">
+                <figure>
+                    <img src="qr-code.jpg" alt="Wechat Group QR Code" width="200">
+                    <figcaption>微信交流群</figcaption>
+                </figure>
+                <figure>
+                    <img src="account-qr.png" alt="Subscription Account" width="200">
+                    <figcaption>微信公众号</figcaption>
+                </figure>
+            </div>
         </div>
         <footer>
         半咸水QwQ 关注MOL喵
+        <br>微信公众号：MOL半咸水语言学公开赛
         </footer>
       </main>
 
