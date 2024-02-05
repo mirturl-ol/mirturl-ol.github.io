@@ -21,9 +21,16 @@
         flex-direction:column;
         align-items:center;
     }
+    .wrap{
+        display:inline-block;
+    }
     a,strong{
         color:#86b4c4;
         font-weight:500;
+        transition:color 0.4s;
+    }
+    a:hover{
+        color:#48a7a3;
     }
     body {
 		margin:-0.2px;
@@ -118,7 +125,35 @@
         width:80vw;
         max-width:800px;
     }
-
+    #results-table{
+        width:90vw;
+        max-width:700px;
+        border-spacing:0;
+        border:#48a7a3 2px solid;
+    }
+    #results-table th{
+        text-align:left;
+        font-weight:400;
+        padding:5px 10px;
+    }
+    #results-table td{
+        padding:5px 10px;
+    }
+    
+    #results-table tr:nth-child(2n){
+        background-color:white;
+    }
+    #results-table tr:nth-child(2n+1){
+        background-color:#e3f5f2;
+    }
+    #results-table tr:first-child{
+        background-color:#48a7a3;
+        color:white;
+    }
+    #solution-content ol a{
+        font-weight:400;
+        text-decoration: none;
+    }
     @media(min-width:768px){
         #questions-content{
             display:grid;
@@ -169,6 +204,13 @@
         #contest-content{
             display:flex;
         }
+        #ranking{
+            margin-top:-10px;
+            display:flex;
+        }
+        #ranking p{
+            padding-right:40px;
+        }
     }
 	</style>
 </head>
@@ -185,29 +227,74 @@
         </div>
       </header>
       <main>
-        <h2>试题解析</h2>
-        <div id="questions-content">
-            <div>
-                <h3>试卷</h3>
-                <p>推荐用时：5小时</p>
-                <p><em>请仔细阅读比赛规则与勘误/提示</em></p>
-                <p><a href="第一届MOL试题.pdf" target="_blank">PDF链接</a></p>
-                <p>试题</p>
-                <ol>
-                    <li>声律启蒙</li>
-                    <li>天诺语</li>
-                    <li>凯特语</li>
-                    <li>印地语</li>
-                    <li>穆鲁伊维托托语</li>
-                </ol>
+        <h2><a href="第一届MOL试题.pdf" target="_blank" style="text-decoration: none;">试卷链接（PDF）</a></h2>
+        <h2>比赛结果</h2>
+        <div id="results-content">
+            <p>第一届MOL获得了超150次关注，其中32名选手正式参与了比赛并提交了答卷，均分61.03分。</p>
+            <p>详细分值情况我们将通过邮件返还给每一位选手。奖金也将通过邮件联系选手添加 @紫顶鹤 的微信进行发放（四个最佳解题每道10元，总分二至五名每人10元，总分第一名20元）。
+            </p>
+            <p>恭喜获奖的选手！</p>
+            <h3>总分排名</h3>
+            <div id="ranking">
+                <p><strong>第五名</strong> <span class="wrap">白开水·不加糖</span></p>
+                <p><strong>第四名</strong> <span class="wrap">Nous5117</span></p>
+                <p><strong>第三名</strong> <span class="wrap">笛子峰</span></p>
+                <p><strong>第二名</strong> <span class="wrap">黄宇潇</span></p>
+                <p><strong>第一名</strong> <span class="wrap">Xulqux</span>，91分</p>
             </div>
-            <div>
-                <h3>解析</h3>
-                <p><a href="第一届MOL解析.pdf" target="_blank">答案及评分标准</a></p>
-                <p><strong>试卷批改结果</strong>会邮箱发还至各位选手</p>
-                <p><strong>题目解析</strong>即将在b站发布</p>
-                <p>关注解析up<a href="https://space.bilibili.com/610765758/">紫顶鹤</a>，不错过最新动态</p>
-            </div>
+            
+            <h3>各题得分一览</h3>
+            <table id="results-table">
+                <tr>
+                    <th></th>
+                    <th>均分</th>
+                    <th>最高分</th>
+                    <th>最佳解</th>
+                </tr>
+                <tr>
+                    <td>声律启蒙</td>
+                    <td>16.53</td>
+                    <td>20<span class="wrap">（9人）</span></td>
+                    <td>Eric</td>
+                </tr>
+                <tr>
+                    <td>天诺语</td>
+                    <td>15.70</td>
+                    <td>20<span class="wrap">（6人）</span></td>
+                    <td>无 *</td>
+                </tr>
+                <tr>
+                    <td>凯特语</td>
+                    <td>5.17</td>
+                    <td>15</td>
+                    <td>笛子峰</td>
+                </tr>
+                <tr>
+                    <td>印地语</td>
+                    <td>10.22</td>
+                    <td>20<span class="wrap">（2人）</span></td>
+                    <td>笛子峰</td>
+                </tr>
+                <tr>
+                    <td>穆鲁伊维托托语</td>
+                    <td>13.41</td>
+                    <td>20<span class="wrap">（5人）</span></td>
+                    <td>Nous5117</td>
+                </tr>
+            </table>
+            <p><strong><em>*本题不设置最佳解题奖</em></strong></p>
+        </div>
+        <h2>答案解析</h2>
+        <div id="solution-content">
+            <p><a href="第一届MOL解析.pdf" target="_blank">答案及评分标准</a></p>
+            <ol>
+                <li>声律启蒙：<a href="best-solution/1.jpg" target="_blank">最佳解</a>·<a href="https://www.bilibili.com/video/BV1tK421y73Y">讲解视频</a></li>
+                <li>天诺语</li>
+                <li>凯特语：<a href="best-solution/3.jpg" target="_blank">最佳解</a></li>
+                <li>印地语：<a href="best-solution/4.jpg" target="_blank">最佳解</a></li>
+                <li>穆鲁伊维托托语：<a href="best-solution/5.jpg" target="_blank">最佳解</a></li>
+            </ol>
+            <p><strong><em>*讲解视频将逐个更新，敬请期待</em></strong></p>
         </div>
         <h2>关于我们</h2>
         <div id="about-content">
