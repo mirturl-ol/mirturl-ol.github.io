@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MOL半咸水语言学公开赛</title>
+    <link rel="icon" href="logo.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;400;500&display=swap" rel="stylesheet">
+    <link rel="prefetch" href="https://static2.deeperblue.com/wp-content/uploads/2017/12/AdobeStock_77464741-scaled.jpeg" />
+
+	<style>
+    .vertically-center{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .horizontally-center{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    .wrap{
+        display:inline-block;
+    }
+    a,strong{
+        color:#86b4c4;
+        font-weight:500;
+        transition:color 0.4s;
+    }
+    a:hover{
+        color:#48a7a3;
+    }
+    body {
+		margin:-0.2px;
+        font-family:"Noto Sans SC", sans-serif;
+        overflow-x:hidden;
+	}
+    figure{
+        margin:5px;
+    }
+    footer{
+        margin-top:30px;
+        border-top:2px solid black;
+        padding-top:30px;
+        color:#48a7a3;
+        text-align:center;
+        font-weight:bold;
+        font-style:italic;
+        font-size:larger;
+    }
+    h1{
+        padding-bottom:20px;
+        border-bottom:2px solid black;
+        font-weight:200;
+        font-size:48px;
+        letter-spacing:0.1em;
+        text-align:center;
+    }
+    h2{
+        line-height:1.2em;
+        font-weight:200;
+        letter-spacing:0.1em;
+        font-size:36px;
+    }
+    header{
+        margin-top:60px;
+        width:100vw;
+        height:70vh;
+        min-height:500px;
+        background-image:url("./cover.jpg");
+        background-repeat:no-repeat;
+        background-size:auto 100vh;
+        background-position:center;
+    }
+    main{
+        padding:40px 10vw;
+        line-height:1.5em;
+    }
+    main h3{
+        font-weight:400;
+        color:#48a7a3;
+    }
+    nav{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        position:fixed;
+        top:0;
+        z-index:999;
+        width:100vw;
+        background-color:white;
+        padding:0 10px;
+        box-shadow:0 3px 10px silver;
+        text-align:center;
+    }
+    nav img{
+        display:block;
+        width:50px;
+        height:50px;
+    }
+    nav p{
+        font-size:20px;
+        margin-left:20px;
+    }
+    p{
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    summary{
+        color:#48a7a3;
+    }
+    #lead{
+        background-color:#e3f5f2;
+        margin:auto;
+        width:70vw;
+        padding:0 3vw;
+        height:55vh;
+        min-height:370px;
+        border-radius:20px;
+        text-align:center;
+    }
+    #hints-content img{
+        width:80vw;
+        max-width:800px;
+    }
+    #results-table{
+        width:85vw;
+        max-width:700px;
+        border-spacing:0;
+        border:#48a7a3 2px solid;
+    }
+    #results-table th{
+        text-align:left;
+        font-weight:400;
+        padding:5px 10px;
+    }
+    #results-table td{
+        padding:5px 10px;
+    }
+    
+    #results-table tr:nth-child(2n){
+        background-color:white;
+    }
+    #results-table tr:nth-child(2n+1){
+        background-color:#e3f5f2;
+    }
+    #results-table tr:first-child{
+        background-color:#48a7a3;
+        color:white;
+    }
+    #solution-content ol a{
+        font-weight:400;
+        text-decoration: none;
+    }
+    @media(min-width:768px){
+        #questions-content{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            column-gap:30px;
+        }
+        #qr-code{
+            display:flex;
+            flex-direction:row;
+            width:410px;
+            margin-left:20px;
+            text-align:center;
+            color:#86b4c4;
+        }
+    }
+    @media (min-width:996px){
+        body{
+            font-size:20px;
+        }
+        h1{
+            text-align:left;
+            font-size:60px;
+        }
+        h2{
+            font-size:48px;
+        }
+        h3{
+            font-size:24px;
+        }
+
+        header{
+            height:70vh;
+            background-position:0% 100%;
+            background-size:100vw auto;
+        }
+        #lead{
+            height:55vh;
+            width:300px;
+            margin-left:5vw;
+            text-align:left;
+        }
+        #about-content{
+            display:grid;
+            grid-template-rows:1fr;
+            grid-template-columns:1fr 1fr 1fr;
+            column-gap:30px;
+        }
+        #contest-content{
+            display:flex;
+        }
+        #ranking{
+            margin-top:-10px;
+            display:flex;
+        }
+        #ranking p{
+            padding-right:40px;
+        }
+    }
+	</style>
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="MOL Logo" width="50">
+        <p>MOL半咸水语言学公开赛</p>
+    </nav>
+    <header class="vertically-center">
+        <div class=" vertically-center" id="lead">
+          <h1>MOL1圆满收官！</h1>
+          <h3>比赛已结束，看看<a href="../mol2/index.html">MOL2</a>！</h3>
+          <p>比赛时间：2024/1/29-2/4</p>
+        </div>
+      </header>
+      <main>
+        <h2><a href="第一届MOL试题.pdf" target="_blank" style="text-decoration: none;">试卷链接（PDF）</a></h2>
+        <h2>比赛结果</h2>
+        <div id="results-content">
+            <p>第一届MOL获得了超150次关注，其中32名选手正式参与了比赛并提交了答卷，均分61.03分。</p>
+            <p>详细分值情况我们已通过邮件返还给每一位选手。奖金已经发放。
+            </p>
+            <p>恭喜获奖的选手！</p>
+            <h3>总分排名</h3>
+            <div id="ranking">
+                <p><strong>第五名</strong> <span class="wrap">白开水·不加糖</span></p>
+                <p><strong>第四名</strong> <span class="wrap">Nous5117</span></p>
+                <p><strong>第三名</strong> <span class="wrap">笛子峰</span></p>
+                <p><strong>第二名</strong> <span class="wrap">黄宇潇</span></p>
+                <p><strong>第一名</strong> <span class="wrap">Xulqux</span>，91分</p>
+            </div>
+            
+            <h3>各题得分一览</h3>
+            <table id="results-table">
+                <tr>
+                    <th></th>
+                    <th>均分</th>
+                    <th>最高分</th>
+                    <th>最佳解</th>
+                </tr>
+                <tr>
+                    <td>声律启蒙</td>
+                    <td>16.53</td>
+                    <td>20<span class="wrap">（9人）</span></td>
+                    <td>Eric</td>
+                </tr>
+                <tr>
+                    <td>天诺语</td>
+                    <td>15.70</td>
+                    <td>20<span class="wrap">（6人）</span></td>
+                    <td>无 *</td>
+                </tr>
+                <tr>
+                    <td>凯特语</td>
+                    <td>5.17</td>
+                    <td>15</td>
+                    <td>笛子峰</td>
+                </tr>
+                <tr>
+                    <td>印地语</td>
+                    <td>10.22</td>
+                    <td>20<span class="wrap">（2人）</span></td>
+                    <td>笛子峰</td>
+                </tr>
+                <tr>
+                    <td>穆鲁伊维托托语</td>
+                    <td>13.41</td>
+                    <td>20<span class="wrap">（5人）</span></td>
+                    <td>Nous5117</td>
+                </tr>
+            </table>
+            <p><strong><em>*本题不设置最佳解题奖</em></strong></p>
+
+            <h3>奖项设置</h3>
+            <p>MOL收到了两笔匿名捐款，共计370元，非常感谢二位对于MOL的赞助！</p>
+            <p>其中，360元作为奖金发放给表现优异的选手，以资鼓励，奖金细则与颁发情况如下：</p>
+            <ol>
+                <li><strong>最佳解题奖</strong>20元，除第二题外每题颁发一份（具体见上），共颁发4份。</li>
+                <li><strong>优秀解题奖</strong>10元，用来奖励所有未获得最佳解题奖的满分答案，共颁发19份。</li>
+                <li><strong>第二名至第五名</strong>每人10元。</li>
+                <li><strong>第一名</strong>30元。</li>
+            </ol>
+            <p>MOL将用捐款剩余的10元以及紫顶鹤B站收益的56元，在微信交流群中发放66元的红包，敬请期待！</p>
+        </div>
+        <h2>答案解析</h2>
+        <div id="solution-content">
+            <p><a href="第一届MOL解析.pdf" target="_blank">答案及评分标准</a></p>
+            <ol>
+                <li>声律启蒙：<a href="best-solution/1.jpg" target="_blank">最佳解</a>·<a href="https://www.bilibili.com/video/BV1tK421y73Y">讲解视频</a></li>
+                <li>天诺语</li>
+                <li>凯特语：<a href="best-solution/3.jpg" target="_blank">最佳解</a></li>
+                <li>印地语：<a href="best-solution/4.jpg" target="_blank">最佳解</a></li>
+                <li>穆鲁伊维托托语：<a href="best-solution/5.jpg" target="_blank">最佳解</a></li>
+            </ol>
+            <p><strong><em>*讲解视频将逐个更新，敬请期待</em></strong></p>
+        </div>
+        <h2>关于我们</h2>
+        <div id="about-content">
+            <div>
+                <h3>MOL是什么？</h3>
+                <p><strong>MOL(Mirturl Linguistics Open)</strong>是由2023年国际语言学奥林匹克竞赛中国国家队自主组织的<strong>语言学公开挑战赛</strong>。本比赛采取<strong>线上进行</strong>的形式，不设任何年龄或年级限制，不收取任何报名费用，<strong>无任何参赛门槛</strong>，旨在向社会推广语言学这一多元多彩的学科。
+                </p>
+            </div>
+            <div>
+                <h3>“半咸水”是什么？</h3>
+                <p>“半咸水”是出现在<strong>IOL2023团队题</strong>“Murrinh-Patha语”中的一个词，在该语言中为<strong>"Mirturl"</strong>，给队员们留下了深刻的印象。“半咸水”还象征着我们来自的土地：<strong>长江下游入海口</strong>，淡水与咸水交汇之地。这个词汇就像妙趣横生的语言一样，传递着一群人的历史与文化，表达着一群人的思想与生命。 </p>
+            </div>
+            <div>
+                <h3>MOL的题目从何而来？</h3>
+                <p>MOL的题目全部由IOL2023<strong>国家队员</strong>们<strong>自主命题</strong>，和IOLC等主流比赛的命题风格将不尽相同，力图更加<strong>有趣</strong>、更加<strong>新颖</strong>、更能传播弘扬语奥的<strong>独特文化</strong>。我们衷心希望能给参赛的各位选手带来更特别的参赛体验。 </p>
+            </div>
+        </div>
+        <h2>比赛规则</h2>
+        <div id="rules-content">
+            <p>一、我们鼓励<strong>独立完成</strong>MOL，也欢迎您与同学或朋友进行<strong>适度讨论</strong>，但<strong>不鼓励您上网搜索、查询资料、直接交流答案</strong>。题干中提供的信息足以推出所有答案，无需参考外部资料。</p>
+            <p>二、每道题目的答案请尽量在一张<strong>单面A4空白打印纸</strong>上书写，字迹尽量清晰工整。如果您直接在电子文档中进行书写，也请尽量书写清晰。如果条件不允许，也可以使用一张单面的其他类型纸张。如果有一张纸实在书写不下的题目，邮件和问卷中都允许额外上传一个附件，请谨慎使用。</p>
+            <p>三、若题目要求书写规则，规则的书写方式请参考<a href="rules-guideline.html" target="_blank">规则书写</a>。</p>
+            <p>四、MOL官方将以客观、公正、公开的标准进行评卷，并公示结果。MOL官方有权对判定雷同的答卷不予评分。</p>
+            <p><strong>祝您好运！</strong></p>
+        </div>
+        <h2>勘误/提示</h2>
+        <div id="hints-content">
+            <h3>【勘误】2/4 02:44 凯特语</h3>
+            <p>第(12)问题干有所改动，目前的pdf中已修正。</p>
+            <h3>【提示】1/30 20:36 声律启蒙</h3>
+            <p>本题解答仅需现代汉语（普通话）的知识，汉字的读音以普通话拼音为准，一切其他音韵学知识皆不必要，也不影响解答。</p>
+            <h3>【提示】1/30 20:36 天诺语</h3>
+            <p>本题解答仅需现代美式英语的知识，一切其他音系学知识皆不必要，也不影响解答。</p>
+            <h3>【阐明】1/30 20:36 凯特语</h3>
+            <p>本体需要写明在语料中发现的规则。</p>
+            <h3>【勘误】1/29 16:18 印地语</h3>
+            <p>第(15)问中，各化学物质的系数应为2-5-<strong>2</strong>-4，而不是2-5-1-4</p>
+            <h3>【提示】1/29 09:08 印地语</h3>
+            <p>出题人xhy给出了额外的重要指示，对于没有学过有机化学的同学强烈建议查看，对于已经学过化学的参赛者也可查看，避免不同教育体系间对于定义理解的不同：</p>
+            <details>
+                <summary>查看提示</summary>
+                <img src="./hints/hindi-1.png">
+                <img src="./hints/hindi-2.png">
+            </details>
+        </div>
+        <h2>MOL如何举办？ </h2>
+        <div id="contest-content">
+            <div>
+                <p>第一届MOL已于<strong>1月29日至2月4日</strong>举办。题目<strong>以PDF格式公布于此站上</strong>。尽管我们的题目<strong>推荐用时</strong>与IOLC相同，大约在5个小时左右，但<strong>提交入口开启了一周</strong>，以给予选手充分的时间完成比赛。</p>
+                <p>比赛后，MOL官方将批改完毕的卷子<strong>以邮箱的方式发给了各位选手</strong>，并在官网上<strong>公布了答案及解析</strong>。成绩靠前的选手的分数也在官网上公布。 </p>
+            </div>
+            <div id="qr-code" class="horizontally-center">
+                <figure>
+                    <img src="group-qr.jpg" alt="Wechat Group QR Code" width="200">
+                    <figcaption>微信交流群</figcaption>
+                </figure>
+                <figure>
+                    <img src="account-qr.png" alt="Subscription Account" width="200">
+                    <figcaption>微信公众号</figcaption>
+                </figure>
+            </div>
+        </div>
+        <footer>
+        半咸水QwQ 关注MOL喵<br>
+        微信公众号：MOL半咸水语言学公开赛<br>
+        邮箱：mirturlol@163.com
+        </footer>
+      </main>
+
+</body>
+
+</html>
