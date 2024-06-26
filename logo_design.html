@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MOL半咸水语言学公开赛</title>
+    <link rel="icon" href="logo.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;400;500&display=swap" rel="stylesheet">
+    <link rel="prefetch" href="https://static2.deeperblue.com/wp-content/uploads/2017/12/AdobeStock_77464741-scaled.jpeg" />
+
+	<style>
+    .vertically-center{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .horizontally-center{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    .wrap{
+        display:inline-block;
+    }
+    .strike{
+        text-decoration:line-through;
+    }
+    a,strong{
+        color:#faaf89;
+        font-weight:500;
+        transition:color 0.4s;
+    }
+    a:hover{
+        color:#ffa38d;
+    }
+    body {
+		margin:-0.2px;
+        font-family:"Noto Sans SC", sans-serif;
+        overflow-x:hidden;
+	}
+    figure{
+        margin:5px;
+    }
+    footer{
+        margin-top:30px;
+        border-top:2px solid black;
+        padding-top:30px;
+        color:#ffa38d;
+        text-align:center;
+        font-weight:bold;
+        font-style:italic;
+        font-size:larger;
+    }
+    h1{
+        padding-bottom:20px;
+        border-bottom:2px solid black;
+        font-weight:200;
+        font-size:48px;
+        letter-spacing:0.1em;
+        text-align:center;
+    }
+    h2{
+        line-height:1.2em;
+        font-weight:200;
+        letter-spacing:0.1em;
+        font-size:36px;
+    }
+    header{
+        margin-top:60px;
+        width:100vw;
+        height:70vh;
+        min-height:500px;
+        background-image:url("./cover.jpg");
+        background-repeat:no-repeat;
+        background-size:auto 100vh;
+        background-position:center;
+    }
+    main{
+        padding:40px 10vw;
+        line-height:1.5em;
+    }
+    main h3{
+        font-weight:400;
+        color:#ffa38d;
+    }
+    nav{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        position:fixed;
+        top:0;
+        z-index:999;
+        width:100vw;
+        background-color:white;
+        padding:0 10px;
+        box-shadow:0 3px 10px silver;
+        text-align:center;
+    }
+    nav img{
+        display:block;
+        width:50px;
+        height:50px;
+    }
+    nav p{
+        font-size:20px;
+        margin-left:20px;
+    }
+    p{
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    summary{
+        color:#ffa38d;
+    }
+    details{
+        padding-left:2em;
+    }
+    #lead{
+        background-color:#fadcdd;
+        margin:auto;
+        width:70vw;
+        padding:0 3vw;
+        height:55vh;
+        min-height:370px;
+        border-radius:20px;
+        text-align:center;
+    }
+    #announcement{
+        text-indent:2em;
+    }
+    #team-intro{
+        text-indent:2em;
+    }
+    #hints-content img{
+        width:80vw;
+        max-width:800px;
+    }
+    #results-table{
+        width:85vw;
+        max-width:700px;
+        border-spacing:0;
+        border:#ffa38d 2px solid;
+    }
+    #results-table th{
+        text-align:left;
+        font-weight:400;
+        padding:5px 10px;
+    }
+    #results-table td{
+        padding:5px 10px;
+    }
+    
+    #results-table tr:nth-child(2n){
+        background-color:white;
+    }
+    #results-table tr:nth-child(2n+1){
+        background-color:#ffdfdf;
+    }
+    #results-table tr:first-child{
+        background-color:#ffa38d;
+        color:white;
+    }
+    #solution-content ol a{
+        font-weight:400;
+        text-decoration: none;
+    }
+    .question p:first-child{
+        color:#ffa38d;
+    }
+    @media(min-width:768px){
+        #questions-content{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            column-gap:30px;
+        }
+        #qr-code{
+            display:flex;
+            flex-direction:row;
+            width:410px;
+            margin-left:20px;
+            text-align:center;
+            color:#faaf89;
+        }
+    }
+    @media (min-width:996px){
+        body{
+            font-size:20px;
+        }
+        h1{
+            text-align:left;
+            font-size:60px;
+        }
+        h2{
+            font-size:48px;
+        }
+        h3{
+            font-size:24px;
+        }
+
+        header{
+            height:70vh;
+            background-position:100% 50%;
+            background-size:100vw auto;
+        }
+        #lead{
+            height:55vh;
+            width:300px;
+            margin-left:5vw;
+            text-align:left;
+        }
+        #about-content{
+            display:grid;
+            grid-template-rows:1fr;
+            grid-template-columns:1fr 1fr 1fr;
+            column-gap:30px;
+        }
+        #contest-content{
+            display:flex;
+        }
+        #ranking{
+            margin-top:-10px;
+            display:flex;
+        }
+        #ranking p{
+            padding-right:40px;
+        }
+    }
+	</style>
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="MOL Logo" width="50">
+        <p>MOL半咸水语言学公开赛</p>
+    </nav>
+    <header class="vertically-center">
+        <div class=" vertically-center" id="lead">
+            <h1>欢迎来到MOL2！</h1>
+            <h3>距离比赛开始还有<span id="countdown"></span>天</h3>
+            <p>比赛时间：2024/7/8-7/14</p>
+        </div>
+      </header>
+      <main>
+        <h2>半咸水的logo是如何设计的？</h2>
+
+        <div id="logos" class="horizontally-center">
+            <figure>
+                <img src="mol1/logo.png" alt="MOL1_logo" width="200">
+                
+            </figure>
+            <figure>
+                <img src="mol2/logo.png" alt="MOL2_logo" width="200">
+                
+            </figure>
+        </div>
+
+        <p>MOL标志以<strong>“江、山、海、日”</strong>为主要意象，不仅富有文化色彩，也阐明了“半咸水”一词的特殊意义。长江是我国最长的河流，自青藏高原奔流而下，直至入海。而我们所来自的土地，正是长江下游靠近入海口处、淡水与咸水<strong>交汇之地</strong>。标志外侧的蓝色“走之底”形象，既象征着<strong>长江</strong>，同时也传递了独特的<strong>中国汉字文化</strong>，更可以看作是“Linguistics”语言学一词首字母“L”的变形。四个渐变绿色多边形象征着“山”——保加利亚<strong>班斯科的绵延山峦</strong>，是首届MOL的组织者与创始人们永远的回忆。中间的渐变橙黄色圆形既象征着“日”，带给人<strong>“日出海上”</strong>的壮阔之感，也与两旁的绿色条带相连构成了<strong>“金牌”</strong>的美好祝愿，为每一位语奥人真诚助力。</p>
+        <p>整体来看，标志中的青山、旭日、江海形象又分别形成了<strong>“M”“O”“L”</strong>三个字母，象征养育生命的山川日月孕育出了语言与文化的多彩。</p>
+        <p>在MOL标志的基础上，第二届MOL的赛事标志则创新性地采用了<strong>粉色调（粉色、酒红色、金色）</strong>，并加上了<strong>阿拉伯数字“2”</strong>，这既象征着我们将带各位选手走入一个截然不同的语言文化世界，也点明了这是“第二届”赛事，并期盼能将半咸水的理念在创新中继承与发扬。</p>
+        <p>我们衷心祝愿每一位了解到我们的朋友怀着此番<strong>对山川日月的敬畏、对语言文化的热爱、对逻辑思维的求索、对能力巅峰的挑战</strong>，在MOL半咸水语言学公开赛中度过一段有意义的时光。</p>
+        
+        
+        
+        <footer>
+        半咸水QwQ 关注MOL喵<br>
+        微信公众号：MOL半咸水语言学公开赛<br>
+        邮箱：mirturlol@163.com
+        </footer>
+      </main>
+      <script>
+        const countdown = document.getElementById("countdown");
+        const currentDate = new Date();
+        const targetDate = new Date("2024-07-08T16:00:00");
+        const dayLeft = Math.ceil((targetDate.getTime()-currentDate.getTime())/86400000);
+        countdown.textContent = dayLeft;
+        countdown.style.color = '#b43759';
+      </script>
+</body>
+
+</html>
