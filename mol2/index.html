@@ -27,6 +27,9 @@
     .strike{
         text-decoration:line-through;
     }
+    .large-only{
+        display:none;
+    }
     a,strong{
         color:#faaf89;
         font-weight:500;
@@ -87,16 +90,23 @@
     }
     nav{
         display:flex;
-        justify-content:center;
+        justify-content:space-between;
         align-items:center;
         position:fixed;
         top:0;
         z-index:999;
-        width:100vw;
+        width:calc(100vw - 60px);
         background-color:white;
-        padding:0 10px;
+        padding:0 30px;
         box-shadow:0 3px 10px silver;
         text-align:center;
+    }
+    nav a{
+        text-decoration:none;
+    }
+    nav div{
+        display:flex;
+        align-items:center;
     }
     nav img{
         display:block;
@@ -125,6 +135,9 @@
         height:55vh;
         min-height:370px;
         border-radius:20px;
+        text-align:center;
+    }
+    #lead p{
         text-align:center;
     }
     #announcement{
@@ -170,6 +183,9 @@
         color:#ffa38d;
     }
     @media(min-width:768px){
+        .large-only{
+            display:block;
+        }
         #questions-content{
             display:grid;
             grid-template-columns:1fr 1fr;
@@ -210,6 +226,9 @@
             margin-left:5vw;
             text-align:left;
         }
+        #lead p{
+            text-align:left;
+        }
         #about-content{
             display:grid;
             grid-template-rows:1fr;
@@ -219,6 +238,9 @@
         #contest-content{
             display:flex;
         }
+        #contest-content div{
+            width:45vw;
+        }
         #ranking{
             margin-top:-10px;
             display:flex;
@@ -226,31 +248,57 @@
         #ranking p{
             padding-right:40px;
         }
+
     }
 	</style>
 </head>
 <body>
     <nav>
-        <img src="logo.png" alt="MOL Logo" width="50">
-        <p>MOL半咸水语言学公开赛</p>
+        <div class="large-only"></div>
+        <div>
+            <img src="logo.png" alt="MOL Logo" width="50">
+            <p>MOL半咸水语言学公开赛</p>
+        </div>
+        <p class="large-only"><a href="../mol1/index.html">MOL1</a></p>
     </nav>
     <header class="vertically-center">
         <div class=" vertically-center" id="lead">
             <h1>欢迎来到MOL2！</h1>
-            <h3>距离比赛开始还有<span id="countdown"></span>天</h3>
+            <h3>距离比赛结束还有<span id="countdown"></span>天</h3>
             <p>比赛时间：2024/7/8-7/14</p>
         </div>
       </header>
       <main>
-        <h2>第二届MOL有消息了吗？</h2>
-        <div id="announcement">
-            <p><em><a href="#about-title">这是哪里？MOL是<span class="strike">物质的量的单位还是载人轨道实验室还是商船三井公司？</span></a></em></p>
-            <p><a href="../mol1/index.html">回顾：第一届MOL</a></p>
-            <p>我们终于要宣布一个激动人心的消息：<strong>第二届半咸水语言学公开赛（MOL2）</strong>即将于今年<strong>七月初</strong>举办！无论您是否了解语言学或语奥，是否参与了今年寒假的第一届MOL，都可以自由了解并参与我们的比赛，在“半咸水”的文化海洋中尽情畅游。</p>
-            <p>第二届半咸水语言学公开赛（MOL2）预计于<strong>2024年7月8日至14日</strong>在线上举行。具体安排、试卷发放方式、试卷提交方式、奖项设置、奖金发放等事项，将在后续的公众号文章与官网上同步更新。记得关注，一定不要错过哦！</p>
-            <p>与第一届相同，第二届MOL依旧为期<strong>七天</strong>，给予选手们充分的时间完赛。另外，我们依旧保持着组委会完全由IOL中国国家队员组成的优良传统，严选题目质量，确保选手们在做题时有足够好的体验与足够丰富的收获。以及最重要地，第二届MOL依旧<strong>无需报名，无需缴费，无参赛门槛</strong>，并且会发放激励性质的<strong>奖状与奖金</strong>。除第一届MOL组委会的成员之外，又有一群<strong>新的小伙伴</strong>加入了我们！他们来自IOL2022和2024的国家队，在语奥试题的制作和评测上都秉有绝对的专业性与负责的态度，无疑令我们尚处于襁褓中的半咸水赛事增光添彩！大家也可以期待一波第二届MOL中他们中的一位或几位带来的题目哦！</p>
+        <h2>试卷/提交入口</h2>
+        <div id="contest-content">
+            <div>
+                <h3>试题</h3>
+                <p><a href="./第二届MOL个人赛题目.pdf" target="_blank">个人赛试卷</a> | <a href="./第二届MOL团队赛题目.pdf" target="_blank">团队赛试卷</a></p>
+                <p><a href="./纳瓦特尔语录音.zip" target="_blank">团队赛音频</a>（重要！务必下载）</p>
+            </div>
+           <div>
+                <h3>提交入口</h3>
+                <p>请将每道题的答案分别写在一张A4纸上，拍照或扫描答案，提交至邮箱mirturlol@163.com</p>
+                <p>*团队赛每组上传一份答案即可</p>
+           </div>
+        </div>
+       
+        <h2>比赛规则</h2>
+        <div id="rules-content">
+            <p>一、我们鼓励<strong>独立完成</strong>MOL，也欢迎您与同学或朋友进行<strong>适度讨论</strong>，但<strong>不鼓励您上网搜索、查询资料、直接交流答案</strong>。题干中提供的信息足以推出所有答案，无需参考外部资料。</p>
+            <p>二、每道题目的答案请尽量在一张<strong>单面A4空白打印纸</strong>上书写，字迹尽量清晰工整。如果您直接在电子文档中进行书写，也请尽量书写清晰。如果条件不允许，也可以使用一张单面的其他类型纸张。如果有一张纸实在书写不下的题目，邮件和问卷中都允许额外上传一个附件，请谨慎使用。</p>
+            <p>三、若题目要求书写规则，规则的书写方式请参考<a href="../rules-guideline.html" target="_blank">规则书写</a>。</p>
+            <p>四、MOL官方将以客观、公正、公开的标准进行评卷，并公示结果。MOL官方有权对判定雷同的答卷不予评分。</p>
+            <p><strong>祝您好运！</strong></p>
         </div>
 
+        <h2>赛事介绍</h2>
+        <div id="announcement">
+            <p><em><a href="#about-title">这是哪里？MOL是<span class="strike">物质的量的单位还是载人轨道实验室还是商船三井公司？</span></a></em></p>
+            <p><a href="../mol1/index.html">回顾：第一届MOL</a> | <a href="../logo_design.html">Logo设计介绍</a></p>
+            <p><strong>第二届半咸水语奥公开赛（MOL2）火热进行中！</strong>无论您是否了解语言学或语奥，是否参与了今年寒假的第一届MOL，都可以自由了解并参与我们的比赛，在“半咸水”的文化海洋中尽情畅游。</p>
+            <p>与第一届相同，第二届MOL依旧为期<strong>七天</strong>，给予选手们充分的时间完赛。另外，我们依旧保持着组委会完全由IOL中国国家队员组成的优良传统，严选题目质量，确保选手们在做题时有足够好的体验与足够丰富的收获。以及最重要地，第二届MOL依旧<strong>无需报名，无需缴费，无参赛门槛</strong>，并且会发放激励性质的<strong>奖状与奖金</strong>。除第一届MOL组委会的成员之外，又有一群<strong>新的小伙伴</strong>加入了我们！他们来自IOL2022和2024的国家队，在语奥试题的制作和评测上都秉有绝对的专业性与负责的态度，无疑令我们尚处于襁褓中的半咸水赛事增光添彩！大家也可以期待一波第二届MOL中他们中的一位或几位带来的题目哦！</p>
+        </div>
         <h2>第二届MOL还有……<strong>团队赛！</strong></h2>
         <div id="team-intro">
             <p>第二届MOL将更加贴近IOL的赛程设置，加入团队赛！</p>
@@ -276,7 +324,7 @@
                 </details>
                 <details>
                     <summary>匹配组队</summary>
-                    <p>第二届MOL为大家提供了多种寻找队友的渠道。我们在各大平台同步发布了一张<li><a href="https://docs.qq.com/sheet/DRUJ0YmJVQUJWR1RL?tab=BB08J2">表格</a></li>，您可以在该表格中填写您的参赛昵称、微信号、在线时间及其他相关个人信息（比如是否了解过语奥、自己擅长的分工，甚至MBTI……）来<span class="strike">相亲</span>吸引契合的队友。同时，您随时可以加入MOL微信群，在群中寻觅心仪的队友。（翻译：MOL为大家搭建了一个社交平台！但是想社交就社交，不想社交就开摆喵）</p>
+                    <p>第二届MOL为大家提供了多种寻找队友的渠道。我们将在赛前一段时间在各大平台同步发布一张表格，您可以在该表格中填写您的参赛昵称、微信号、在线时间及其他相关个人信息（比如是否了解过语奥、自己擅长的分工，甚至MBTI……）来<span class="strike">相亲</span>吸引契合的队友。同时，您随时可以加入MOL微信群，在群中寻觅心仪的队友。（翻译：MOL为大家搭建了一个社交平台！但是想社交就社交，不想社交就开摆喵）</p>
                     <p>组队成功后，请在表格中修改自己的组队状态。对于开赛前还未组队的选手，我们将按3-4人一组进行分配。</p>
                     <p>填写组队表格并成功组队意味着您向您的队友们保证了自己会积极参赛，请努力坚持合作完赛哦！</p>
                 </details>
@@ -296,7 +344,7 @@
                 <ol>
                     <li>（自行/在组委会的协调下）组建自己的微信群或QQ群，确认队名和队员昵称等</li>
                     <li>有条件线下讨论最佳，没有条件则建议使用腾讯会议或Zoom等方式，协商好共同空闲的时间一同解题，极不建议仅每个人完成自己的工作而无团队的实时沟通</li>
-                    <li>灵活使用腾讯文档、金山文档、飞书、Google Drive等线上办公工具，且由于MOL可能会有七天的战线，需要注意保存以免信息丢失</li>
+                    <li>灵活使用腾讯文档、金山文档、Google Drive等线上办公工具，且由于MOL可能会有七天的战线，需要注意保存以免信息丢失</li>
                     <li>截止时间前再次确认队名和队员昵称等信息，并确保所有队员全部交卷</li>
                 </ol>
             </div>
@@ -329,20 +377,11 @@
             <div>
                 <h3>“半咸水”是什么？</h3>
                 <p>“半咸水”是出现在<strong>IOL2023团队题</strong>“Murrinh-Patha语”中的一个词，在该语言中为<strong>"Mirturl"</strong>，给队员们留下了深刻的印象。“半咸水”还象征着我们来自的土地：<strong>长江下游入海口</strong>，淡水与咸水交汇之地。这个词汇就像妙趣横生的语言一样，传递着一群人的历史与文化，表达着一群人的思想与生命。 </p>
-            	<p><a href="../logo_design.html">看看我们的Logo设计</a></p>
-	    </div>
+            </div>
             <div>
                 <h3>MOL的题目从何而来？</h3>
-                <p>MOL的题目全部由IOL<strong>国家队员</strong>们<strong>自主命题</strong>，和IOLC等主流比赛的命题风格将不尽相同，力图更加<strong>有趣</strong>、更加<strong>新颖</strong>、更能传播弘扬语奥的<strong>独特文化</strong>。我们衷心希望能给参赛的各位选手带来更特别的参赛体验。 </p>
+                <p>MOL的题目全部由IOL2023<strong>国家队员</strong>们<strong>自主命题</strong>，和IOLC等主流比赛的命题风格将不尽相同，力图更加<strong>有趣</strong>、更加<strong>新颖</strong>、更能传播弘扬语奥的<strong>独特文化</strong>。我们衷心希望能给参赛的各位选手带来更特别的参赛体验。 </p>
             </div>
-        </div>
-        <h2>比赛规则</h2>
-        <div id="rules-content">
-            <p>一、我们鼓励<strong>独立完成</strong>MOL，也欢迎您与同学或朋友进行<strong>适度讨论</strong>，但<strong>不鼓励您上网搜索、查询资料、直接交流答案</strong>。题干中提供的信息足以推出所有答案，无需参考外部资料。</p>
-            <p>二、每道题目的答案请尽量在一张<strong>单面A4空白打印纸</strong>上书写，字迹尽量清晰工整。如果您直接在电子文档中进行书写，也请尽量书写清晰。如果条件不允许，也可以使用一张单面的其他类型纸张。如果有一张纸实在书写不下的题目，邮件和问卷中都允许额外上传一个附件，请谨慎使用。</p>
-            <p>三、若题目要求书写规则，规则的书写方式请参考<a href="../rules-guideline.html" target="_blank">规则书写</a>。</p>
-            <p>四、MOL官方将以客观、公正、公开的标准进行评卷，并公示结果。MOL官方有权对判定雷同的答卷不予评分。</p>
-            <p><strong>祝您好运！</strong></p>
         </div>
         
         <h2>MOL如何举办？ </h2>
@@ -371,7 +410,7 @@
       <script>
         const countdown = document.getElementById("countdown");
         const currentDate = new Date();
-        const targetDate = new Date("2024-07-08T16:00:00");
+        const targetDate = new Date("2024-07-14T16:00:00");
         const dayLeft = Math.ceil((targetDate.getTime()-currentDate.getTime())/86400000);
         countdown.textContent = dayLeft;
         countdown.style.color = '#b43759';
