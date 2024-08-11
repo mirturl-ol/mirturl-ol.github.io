@@ -175,6 +175,9 @@
         background-color:#ffa38d;
         color:white;
     }
+    #solution-content ol li{
+        padding-left:15px;
+    }
     #solution-content ol a{
         font-weight:400;
         text-decoration: none;
@@ -278,41 +281,93 @@
         </div>
       </header>
       <main>
-        <h2>MOL2圆满收官！</h2>
-        <p>MOL组委会批卷工作已经结束。我们已通过邮件发送各位选手的成绩，请多多留意邮箱吧！</p>
-        <p>答案与解析已经发布了！分数统计也在路上了，之后会在本网站与公众号同步公布，也请多多关注啦QwQ</p>
-        <p>最后，感谢各位的参与与支持！MOL would be impossible without you ❤</p>
-        <h2>试卷/答案</h2>
+        <h2>MOL2圆满收工！</h2>
+        <div id="results-content">
+            <p>感谢各位的参与与支持！MOL would be impossible without you ❤</p>
+            <p>第二届MOL获得了<strong>超200次关注</strong>，共<strong>79人</strong>提交答卷</p>
+            <p>详细分值情况我们已通过邮件返还给每一位选手。奖金已经发放。
+            </p>
+            <p>恭喜获奖的选手！</p>
+            <h3>总分</h3>
+            <p>MOL2以个人*80%+团队*20%的方式计算了总分奖（仅有两项比赛都参与的选手才可获得），共计32人获得。</p>
+            <p>在这32名选手中，个人赛均分为<strong>51.86</strong>分，团队赛均分为<strong>51.29</strong>分，总分均分为<strong>51.75</strong>分。综合考量分数分布后，我们划定了金奖5人（分数线为76.46分）、银奖11人（分数线为56.3分）、铜奖16人。对于这些选手，我们为团队赛金奖颁发每人10元，为总分金奖再颁发每人10元。</p>
+            <p>个人赛最高分qramecat乔奕铭选手以领先优势毫无悬念地获总分第一名（85.9分）！总分前五分别为：qramecat乔奕铭、黄宇潇、Brightly_、ItzSetrods、Sukilin。相关信息我们已经与奖状一同发还大家的邮箱，请于近几日随时查收哦！</p>
+
+            <h3>个人赛</h3>
+            <table id="results-table">
+                <tr>
+                    <th></th>
+                    <th>均分</th>
+                    <th>均分（去0）</th>
+                    <th>最高分</th>
+                    <th>最佳解</th>
+                </tr>
+                <tr>
+                    <td>则天文字/IDS</td>
+                    <td>14.17</td>
+                    <td>14.17</td>
+                    <td>20</td>
+                    <td>qramecat乔奕铭</td>
+                </tr>
+                <tr>
+                    <td>努哈尔克语</td>
+                    <td>10.95</td>
+                    <td>12.11</td>
+                    <td>18.5</td>
+                    <td>sevenkplus</td>
+                </tr>
+                <tr>
+                    <td>葛颇彝语</td>
+                    <td>6.00</td>
+                    <td>8.40</td>
+                    <td>20</td>
+                    <td>qramecat乔奕铭</td>
+                </tr>
+                <tr>
+                    <td>竞技体操</td>
+                    <td>8.71</td>
+                    <td>11.44</td>
+                    <td>19</td>
+                    <td>qramecat乔奕铭</td>
+                </tr>
+                <tr>
+                    <td>莱拉语</td>
+                    <td>7.06</td>
+                    <td>10.98</td>
+                    <td>18.5</td>
+                    <td>sevenkplus</td>
+                </tr>
+            </table>
+            <a href="#">查看详细统计数据</a>
+
+            <p>个人赛平均分为<strong>46.89</strong>分。综合考量分数分布后，我们划定了金奖6人（分数线为76.5分）、银奖15人（分数线为50分）、铜奖21人。金奖奖金为每人10元，最佳解题奖奖金为每题20元。</p>
+            <p>个人赛最高分为<strong>qramecat乔奕铭</strong>，获得90分！另外，我们更惊讶的是两名选手包揽了五个最佳解题奖！让我们祝贺以上选手！没有获得奖金的参赛者们也不要灰心，一场比赛绝不是语奥的终点，愿您与我们一同在语言学的田野中挥洒汗水、辛勤耕耘，相信一定会有所收获！</p>
+
+            <h3>团队赛</h3>
+            <p>本次比赛中，共有<strong>20支队伍</strong>完成了团队赛，分数情况如下：</p>
+            <p>团队赛平均分为<strong>48.63分</strong>。我们划定了金奖3组（分数线为87.5分）、银奖8组（分数线为51分）、铜奖9组。团队赛奖金不以团队为单位发布。</p>
+            <p>我们在赛前根本没预料到大家的团队分数能达到这么高，更不敢想象第一名会来到97.5分！在本次比赛中，“我打语竞，真的假的？”以97.5分获得冠军，“白兔保护队”以97分获得亚军，“simplicissimus队”以87.5分获得季军。这三支金奖队伍的实力实在是太不可思议了！组委会对他们敏锐的观察力、出色的团队协作与坚持不懈的努力感到由衷敬佩！</p>
+            <p>无论分数如何，团队赛都是一个团队合作的过程，因此需要的不只有解题，更重要的是相处、磨合、互相信任、互相配合、互相支持与理解……相信无论是哪一支队伍，都一定能在完成MOL2团队赛的过程中收获到团队合作的宝贵经验，乃至结识珍贵的友谊！语奥一线牵，相逢即是缘，希望大家喜欢我们的团队赛，也在以后其他团队活动中更上一层楼！</p>
+
+
+        <h2>试卷/解析</h2>
         <div id="test-content">
             <div>
                 <h3>试题</h3>
                 <p><a href="./第二届MOL个人赛题目.pdf" target="_blank">个人赛试卷</a> | <a href="./第二届MOL团队赛题目.pdf" target="_blank">团队赛试卷</a></p>
                 <p><a href="./纳瓦特尔语录音.zip" target="_blank">团队赛音频</a>（重要！务必下载）</p>
-		<h3>答案</h3>
-                <p><a href="./第二届MOL个人赛答案.pdf" target="_blank">个人赛答案</a> | <a href="./第二届MOL团队赛答案.pdf" target="_blank">团队赛答案</a></p>
+                <p>答案：<a href="./第二届MOL个人赛答案.pdf" target="_blank">个人赛答案</a> | <a href="./第二届MOL团队赛答案.pdf" target="_blank">团队赛答案</a></p>
             </div>
-           <div>
-                <h3>赛后问卷（调查已结束，统计情况我们后续会更新在官网！）</h3>
-                <img src="./wjx-qr.jpg">
-                <p>问卷星二维码 <strong>►</strong></p>
-                <p><a href="https://www.wjx.cn/vm/hwSZYY7.aspx#" target="_blank">问卷星链接</a></p>
-                
+           <div id="solution-content">
+                <h3>解析</h3>
+                <ol>
+                    <li>则天文字/IDS</li>
+                    <li>努哈尔克语</li>
+                    <li>葛颇彝语</li>
+                    <li>竞技体操</li>
+                    <li>莱拉语 <a href="https://www.bilibili.com/video/BV1mFYwe4EXu" target="blank">解析</a></li>
+                </ol>
            </div>
-        </div>
-
-	<h2>勘误/提示</h2>
-	<div id="tips-content">
-		<h3>【提示】7/15 11：49</h3>
-		<p>我们已经在新的题目文档中修正了之前的所有勘误与提示。另外，MOL1的所有勘误与提示也已一并修正。</p>
-	</div>
-       
-        <h2>比赛规则</h2>
-        <div id="rules-content">
-            <p>一、我们鼓励<strong>独立完成</strong>MOL，也欢迎您与同学或朋友进行<strong>适度讨论</strong>，但<strong>不鼓励您上网搜索、查询资料、直接交流答案</strong>。题干中提供的信息足以推出所有答案，无需参考外部资料。</p>
-            <p>二、每道题目的答案请尽量在一张<strong>单面A4空白打印纸</strong>上书写，字迹尽量清晰工整。如果您直接在电子文档中进行书写，也请尽量书写清晰。如果条件不允许，也可以使用一张单面的其他类型纸张。如果有一张纸实在书写不下的题目，邮件和问卷中都允许额外上传一个附件，请谨慎使用。</p>
-            <p>三、若题目要求书写规则，规则的书写方式请参考<a href="../rules-guideline.html" target="_blank">规则书写</a>。</p>
-            <p>四、MOL官方将以客观、公正、公开的标准进行评卷，并公示结果。MOL官方有权对判定雷同的答卷不予评分。</p>
-            <p><strong>祝您好运！</strong></p>
         </div>
 
         <h2>赛事介绍</h2>
@@ -350,7 +405,7 @@
             <div id="qr-code" class="horizontally-center">
                 <figure>
                     <img src="../group-qr.jpg" alt="Wechat Group QR Code" width="200">
-                    <figcaption>微信交流群（群人数已大于200，目前二维码暂不可用，请关注公众号或官网留意后续通知）</figcaption>
+                    <figcaption>微信交流群</figcaption>
                 </figure>
                 <figure>
                     <img src="../account-qr.png" alt="Subscription Account" width="200">
