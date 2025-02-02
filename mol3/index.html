@@ -296,8 +296,8 @@
     </nav>
     <header class="vertically-center">
         <div class=" vertically-center" id="lead">
-            <h1>欢迎来到MOL3！</h1>
-            <h3>距离比赛开始还有<span id="daycount"></span>天<span id="hourcount"></span>小时</h3>
+            <h1>MOL3火热进行中！</h1>
+            <h3>距离比赛结束还有<span id="daycount"></span>天<span id="hourcount"></span>小时</h3>
             <p>比赛时间：2025/2/3-2/9</p>
         </div>
       </header>
@@ -307,7 +307,7 @@
             <div>
                 <h3>试题</h3>
                 <p><a href="第三届MOL个人赛题目.pdf" target="_blank">个人赛试卷</a></p>
-                <p><a href="第三届MOL个人赛视频材料.zip" target="_blank">Q3补充材料</a>（重要！务必下载）</p>
+                <p><a href="第三届MOL个人赛视频材料.zip" target="_blank">补充材料</a>（重要！务必下载）</p>
             </div>
            <div>
                 <h3>提交入口</h3>
@@ -405,7 +405,7 @@
         const daycount = document.getElementById("daycount");
         const hourcount = document.getElementById("hourcount");
         const currentDate = new Date();
-        const targetDate = new Date("2025-02-03T00:00:00");
+        const targetDate = new Date("2025-02-10T00:00:00");
         const hoursLeft = Math.round((targetDate.getTime()-currentDate.getTime())/86400000*24);
         daycount.textContent = Math.floor(hoursLeft/24);
         hourcount.textContent = hoursLeft%24;
