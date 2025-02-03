@@ -84,16 +84,24 @@
     }
     nav{
         display:flex;
-        justify-content:center;
+        justify-content:space-between;
         align-items:center;
         position:fixed;
         top:0;
         z-index:999;
-        width:100vw;
+        width:calc(100vw - 60px);
         background-color:white;
-        padding:0 10px;
+        padding:0 30px;
         box-shadow:0 3px 10px silver;
         text-align:center;
+    }
+    nav a{
+        text-decoration:none;
+    }
+    nav div{
+        display:flex;
+        align-items:center;
+        column-width:1fr;
     }
     nav img{
         display:block;
@@ -168,6 +176,10 @@
             text-align:center;
             color:#86b4c4;
         }
+        nav .large-only{
+            width:10em;
+            text-align:right;
+        }
     }
     @media (min-width:996px){
         body{
@@ -216,13 +228,17 @@
 </head>
 <body>
     <nav>
-        <img src="logo.png" alt="MOL Logo" width="50">
-        <p>MOL半咸水语言学公开赛</p>
+        <div class="large-only"></div>
+        <div>
+            <img src="logo.png" alt="MOL Logo" width="50">
+            <p>MOL半咸水语言学公开赛</p>
+        </div>
+        <p class="large-only"><a href="../index.html">返回MOL</a></p>
     </nav>
     <header class="vertically-center">
         <div class=" vertically-center" id="lead">
           <h1>MOL1圆满收官！</h1>
-          <h3>比赛已结束，看看<a href="../mol2/index.html">MOL2</a>！</h3>
+          <p>比赛已结束，看看<a href=../index.html>最新最热MOL</a></p>
           <p>比赛时间：2024/1/29-2/4</p>
         </div>
       </header>
@@ -284,18 +300,16 @@
             </table>
             <p><strong><em>*本题不设置最佳解题奖</em></strong></p>
 
-	    <p><a href="stat/stat.html" target="_blank">查看详细统计数据</a></p>
-	    
             <h3>奖项设置</h3>
             <p>MOL收到了两笔匿名捐款，共计370元，非常感谢二位对于MOL的赞助！</p>
             <p>其中，360元作为奖金发放给表现优异的选手，以资鼓励，奖金细则与颁发情况如下：</p>
             <ol>
                 <li><strong>最佳解题奖</strong>20元，除第二题外每题颁发一份（具体见上），共颁发4份。</li>
                 <li><strong>优秀解题奖</strong>10元，用来奖励所有未获得最佳解题奖的满分答案，共颁发19份。</li>
-                <li><strong>第二名至第五名</strong>每人15元。</li>
+                <li><strong>第二名至第五名</strong>每人10元。</li>
                 <li><strong>第一名</strong>30元。</li>
             </ol>
-            <p>另外，MOL已用捐款剩余的10元以及紫顶鹤B站收益的56元，在微信交流群中发放了66元的红包，鼓励更多人参入到半咸水的交流当中！</p>
+            <p>MOL将用捐款剩余的10元以及紫顶鹤B站收益的56元，在微信交流群中发放66元的红包，敬请期待！</p>
         </div>
         <h2>答案解析</h2>
         <div id="solution-content">
@@ -307,7 +321,7 @@
                 <li>印地语：<a href="best-solution/4.jpg" target="_blank">最佳解</a>·<a href="https://www.bilibili.com/video/BV18m41117s7">讲解视频</a></li>
                 <li>穆鲁伊维托托语：<a href="best-solution/5.jpg" target="_blank">最佳解</a>·<a href="https://www.bilibili.com/video/BV1A1421X7Bm">讲解视频</a></li>
             </ol>
-            <p><strong><em>*讲解视频已更新完毕，欢迎前往B站观看交流！</em></strong></p>
+            <p><strong><em>*讲解视频将逐个更新，敬请期待</em></strong></p>
         </div>
         <h2>关于我们</h2>
         <div id="about-content">
