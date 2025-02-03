@@ -9,6 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;400;500&display=swap" rel="stylesheet">
     <link rel="prefetch" href="https://static2.deeperblue.com/wp-content/uploads/2017/12/AdobeStock_77464741-scaled.jpeg" />
+    <link rel="preload" href="cover.jpg" as="image" type="image/jpeg">
     <!--theme#6cb3b3-->
 
 	<style>
@@ -219,6 +220,10 @@
             display:flex;
             justify-content:center;
         }
+        nav .large-only{
+            width:10em;
+            text-align:right;
+        }
     }
     @media (min-width:996px){
         body{
@@ -277,10 +282,7 @@
         #ranking p{
             padding-right:40px;
         }
-        nav .large-only{
-            width:10em;
-            text-align:right;
-        }
+        
 
     }
 	</style>
@@ -296,8 +298,8 @@
     </nav>
     <header class="vertically-center">
         <div class=" vertically-center" id="lead">
-            <h1>MOL3进行中！</h1>
-            <h3>离比赛结束还有<span id="daycount"></span>天<span id="hourcount"></span>小时</h3>
+            <h1>欢迎来到MOL3！</h1>
+            <h3>距离比赛结束还有<span id="daycount"></span>天<span id="hourcount"></span>小时</h3>
             <p>比赛时间：2025/2/3-2/9</p>
         </div>
       </header>
@@ -322,12 +324,12 @@
            </div>
         </div>
 
-	<h2>勘误/提示</h2>
+        <h2>勘误/提示</h2>
         <div id="hints-content">
             <h3>【勘误】2/3 08:22 库加马特乔拉语</h3>
             <p>第二题第3小问的词汇应为bənəːnə而非bənəːn，网站最新的PDF上已经修正了这一错误。</p>
         </div>
-	<div id="hints-content">
+	    <div id="hints-content">
             <h3>【提示】2/3 09:24 哈鲁埃语</h3>
             <p>网站最新的PDF上添加了一条“肱二头肌”的注释，并修正了一些不影响做题的编号错误。</p>
         </div>
@@ -383,9 +385,6 @@
             </div>
         </div>
 
-	
-
-	      
         <h2>往届赛事</h2>
         <div id="past-contests">
             <div class="horizontally-center" id="mol1-link">
