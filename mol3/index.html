@@ -85,6 +85,9 @@
         background-size:auto 100vh;
         background-position:center;
     }
+    img{
+        max-width:80vw;
+    }
     main{
         padding:40px 10vw;
         line-height:1.5em;
@@ -224,6 +227,18 @@
             width:10em;
             text-align:right;
         }
+        #test-content{
+            display:flex;
+        }
+        #test-content div{
+            width:25vw;
+            margin-right:5vw;
+        }
+        #test-content div img{
+            width:150px;
+            float:right;
+            max-width:20vw;
+        }
     }
     @media (min-width:996px){
         body{
@@ -259,18 +274,6 @@
             grid-template-rows:1fr;
             grid-template-columns:1fr 1fr 1fr;
             column-gap:30px;
-        }
-        #test-content{
-            display:flex;
-        }
-        #test-content div{
-            width:25vw;
-            margin-right:5vw;
-        }
-        #test-content div img{
-            width:150px;
-            float:right;
-            max-width:20vw;
         }
         #contest-content{
             display:flex;
@@ -317,8 +320,8 @@
            </div>
            <div>
                 <h3>赛后问卷</h3>
-                <img src="wjx-qr.jpg">
-                <p>问卷星二维码 <strong>►</strong></p>
+                <img id="wjx-qr" src="wjx-qr.jpg">
+                <p>问卷星 <strong>►</strong></p>
                 <p><a href="https://www.wjx.cn/vm/wiVRGcc.aspx" target="_blank">问卷星链接</a></p>
 
            </div>
