@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MOL半咸水语言学公开赛</title>
+    <link rel="icon" href="logo.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;400;500&display=swap" rel="stylesheet">
+    <link rel="prefetch" href="https://static2.deeperblue.com/wp-content/uploads/2017/12/AdobeStock_77464741-scaled.jpeg" />
+    <link rel="preload" href="cover.jpg" as="image" type="image/jpeg">
+    <!--theme#6cb3b3-->
+
+	<style>
+    .vertically-center{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .horizontally-center{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    /* .wrap{
+        display:inline-block;
+    } */
+    .strike{
+        text-decoration:line-through;
+    }
+    .large-only{
+        display:none;
+    }
+    .image-container {
+        position: relative;
+        overflow: hidden;
+    } 
+
+    .image-container img {
+        transition: all 0.3s ease;
+    } 
+
+    .image-container:hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        background-color: rgba(0,0,0,0.2); /* Hot pink overlay */
+
+        z-index: 1;
+
+        }
+
+    a,strong{
+        color:#6cb3b3;
+        font-weight:500;
+        transition:color 0.4s;
+    }
+    a{
+        color:#feaf6d;
+    }
+    a:hover{
+        color:#779977;
+    }
+    body {
+		margin:-0.2px;
+        font-family:"Noto Sans SC", sans-serif;
+        overflow-x:hidden;
+	}
+    figure{
+        margin:5px;
+    }
+    footer{
+        margin-top:30px;
+        border-top:2px solid black;
+        padding-top:30px;
+        color:#feaf6d;
+        text-align:center;
+        font-weight:bold;
+        font-style:italic;
+        font-size:larger;
+    }
+    h1{
+        padding-bottom:20px;
+        border-bottom:2px solid black;
+        font-weight:200;
+        font-size:48px;
+        letter-spacing:0.1em;
+        text-align:center;
+    }
+    h2{
+        line-height:1.2em;
+        font-weight:200;
+        letter-spacing:0.1em;
+        font-size:36px;
+    }
+    header{
+        margin-top:60px;
+        width:100vw;
+        height:70vh;
+        min-height:500px;
+        background-image:url("cover.jpg");
+        background-repeat:no-repeat;
+        background-size:auto 100vh;
+        background-position:center;
+    }
+    img{
+        max-width:80vw;
+    }
+    main{
+        padding:40px 10vw;
+        line-height:1.5em;
+    }
+    main h3{
+        font-weight:400;
+        color:#feaf6d;
+    }
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        position:fixed;
+        top:0;
+        z-index:999;
+        width:calc(100vw - 60px);
+        background-color:white;
+        padding:0 30px;
+        box-shadow:0 3px 10px silver;
+        text-align:center;
+    }
+    nav a{
+        text-decoration:none;
+    }
+    nav div{
+        display:flex;
+        align-items:center;
+        column-width:1fr;
+    }
+    nav img{
+        display:block;
+        width:50px;
+        height:50px;
+    }
+    nav p{
+        font-size:20px;
+        margin-left:20px;
+    }
+    p{
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    #lead{
+        background-color:#dcdcd6;
+        margin:auto;
+        width:70vw;
+        padding:0 3vw;
+        height:55vh;
+        min-height:370px;
+        border-radius:20px;
+        text-align:center;
+    }
+    #lead p{
+        text-align:center;
+    }
+    #announcement{
+        text-indent:2em;
+    }
+    #team-intro{
+        text-indent:2em;
+    }
+    #hints-content img{
+        width:80vw;
+        max-width:800px;
+    }
+    #results-table{
+        width:85vw;
+        max-width:700px;
+        border-spacing:0;
+        border:#feaf6d 2px solid;
+    }
+    #results-table th{
+        text-align:left;
+        font-weight:400;
+        padding:5px 10px;
+    }
+    #results-table td{
+        padding:5px 10px;
+    }
+    
+    #results-table tr:nth-child(2n){
+        background-color:white;
+    }
+    #results-table tr:nth-child(2n+1){
+        background-color:#ffdfdf;
+    }
+    #results-table tr:first-child{
+        background-color:#feaf6d;
+        color:white;
+    }
+    #solution-content ol a{
+        font-weight:400;
+        text-decoration: none;
+    }
+    /* .question p:first-child{
+        color:#feaf6d;
+    } */
+    #past-contests img{
+        width:400px;
+        max-width:80vw;
+    }
+    #past-contests a{
+        text-decoration: none;
+    }
+
+    #mol1-link a p{
+        color:#48a7a3;
+        text-align:center;
+        margin-block-end: 0;
+    }
+    #mol2-link a p{
+        color:#ff8e74;
+        text-align:center;
+        margin-block-end: 0;
+    }
+    @media(min-width:768px){
+        .small-only{
+            display:none;
+        }
+        .large-only{
+            display:block;
+        }
+        #questions-content{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            column-gap:30px;
+        }
+        .qr-code{
+            display:flex;
+            flex-direction:row;
+            width:410px;
+            margin-left:20px;
+            text-align:center;
+            color:#feaf6d;
+        }
+        #past-contests{
+            display:flex;
+            justify-content:center;
+        }
+        nav .large-only{
+            width:10em;
+            text-align:right;
+        }
+        #test-content{
+            display:flex;
+        }
+        #test-content div{
+            width:25vw;
+            margin-right:5vw;
+        }
+        #test-content div img{
+            width:150px;
+            float:right;
+            max-width:20vw;
+        }
+    }
+    @media (min-width:996px){
+        body{
+            font-size:20px;
+        }
+        h1{
+            text-align:left;
+            font-size:60px;
+        }
+        h2{
+            font-size:48px;
+        }
+        h3{
+            font-size:24px;
+        }
+
+        header{
+            height:70vh;
+            background-position:100% 50%;
+            background-size:100vw 90vh;
+        }
+        #lead{
+            height:55vh;
+            width:300px;
+            margin-left:5vw;
+            text-align:left;
+        }
+        #lead p{
+            text-align:left;
+        }
+        #about-content{
+            display:grid;
+            grid-template-rows:1fr;
+            grid-template-columns:1fr 1fr 1fr;
+            column-gap:30px;
+        }
+        #contest-content{
+            display:flex;
+        }
+        /* #ranking{
+            margin-top:-10px;
+            display:flex;
+        } */
+        #ranking p{
+            padding-right:40px;
+        }
+        
+
+    }
+	</style>
+</head>
+<body>
+    <nav>
+        <div class="large-only"></div>
+        <div>
+            <img src="logo.png" alt="MOL Logo" width="50">
+            <p>MOL半咸水语言学公开赛</p>
+        </div>
+        <p class="large-only"><a href="../mol1/index.html">MOL1</a> | <a href="../mol2/index.html">MOL2</a></p>
+    </nav>
+    <header class="vertically-center">
+        <div class=" vertically-center" id="lead">
+            <h1>欢迎来到MOL3！</h1>
+            <h3>离比赛结束还有<span id="daycount"></span>天<span id="hourcount"></span>小时</h3>
+            <p>比赛时间：2025/2/3-2/9</p>
+        </div>
+      </header>
+      <main>
+        <h2>试卷/提交入口</h2>
+        <div id="test-content">
+            <div>
+                <h3>试题</h3>
+                <p><a href="第三届MOL个人赛题目.pdf" target="_blank">个人赛试卷</a></p>
+                <p><a href="第三届MOL个人赛视频材料.zip" target="_blank">补充材料</a>（重要！务必下载）</p>
+            </div>
+           <div>
+                <h3>提交入口</h3>
+                <p style="text-align:left;">请将每道题的答案分别写在一张A4纸上，拍照或扫描答案，提交至邮箱mirturlol@163.com</p>
+           </div>
+           <div>
+                <h3>赛后问卷</h3>
+                <div class="qr-code">     
+                    <div>
+                        <p>问卷星二维码 <strong class="small-only">▼</strong><strong class="large-only">►</strong></p>
+                        <p><a href="https://www.wjx.cn/vm/wiVRGcc.aspx" target="_blank">(链接)</a></p>   
+                    </div> 
+                           
+                    <img src="wjx-qr.jpg">
+                    
+                </div>
+
+                
+                <p></p>
+
+           </div>
+        </div>
+
+        <h2>勘误/提示</h2>
+        <div id="hints-content">
+            <h3>【勘误】2/3 08:22 库加马特乔拉语</h3>
+            <p>第二题第3小问的词汇应为bənəːnə而非bənəːn，网站最新的PDF上已经修正了这一错误。</p>
+        </div>
+	    <div id="hints-content">
+            <h3>【提示】2/3 09:24 哈鲁埃语</h3>
+            <p>网站最新的PDF上添加了一条“肱二头肌”的注释，并修正了一些不影响做题的编号错误。</p>
+        </div>
+	</div>
+	    <div id="hints-content">
+            <h3>【提示】2/4 09:24 阿卡德语</h3>
+            <p>格律是诗歌中节奏与声音的特定规律，在本题中特指主重音、次重音、非重音三类音节的排布规律。该提示已更新在网站最新的PDF中。</p>
+        </div>
+	</div>
+	    <div id="hints-content">
+            <h3>【提示】2/5 11:29 阿卡德语</h3>
+            <p>在阿卡德语诗歌中，“重音不相邻”这一原则是普遍的，作用范围包括但不限于词内、词间、音步间、诗小节间、诗行间。该提示不会更新在PDF中。</p>
+        </div>
+       
+        <h2>比赛规则</h2>
+        <div id="rules-content">
+            <p>一、我们鼓励<strong>独立完成</strong>MOL，也欢迎您与同学或朋友进行<strong>适度讨论</strong>，但<strong>不鼓励您上网搜索、查询资料、直接交流答案</strong>。题干中提供的信息足以推出所有答案，无需参考外部资料。</p>
+            <p>二、每道题目的答案请尽量在一张<strong>单面A4空白打印纸</strong>上书写，字迹尽量清晰工整。如果您直接在电子文档中进行书写，也请尽量书写清晰。如果条件不允许，也可以使用一张单面的其他类型纸张。如果有一张纸实在书写不下的题目，邮件和问卷中都允许额外上传一个附件，请谨慎使用。</p>
+            <p>三、若题目要求书写规则，规则的书写方式请参考<a href="../rules-guideline.html" target="_blank">规则书写</a>。</p>
+            <p>四、MOL官方将以客观、公正、公开的标准进行评卷，并公示结果。MOL官方有权对判定雷同的答卷不予评分。</p>
+            <p><strong>祝您好运！</strong></p>
+        </div>
+
+        <h2>赛事介绍</h2>
+        <div id="announcement">
+            <p><em><a href="#about-title">这是哪里？MOL是<span class="strike">物质的量的单位还是载人轨道实验室还是商船三井公司？</span></a></em></p>
+            <p>第三届半咸水语奥公开赛（MOL3）火热进行中！无论您是否了解语言学或语奥，是否参与了前两届MOL，都可以自由了解并参与我们的比赛，在“半咸水”的文化海洋中尽情畅游。</p>
+            <p>与第一第二届相同，第三届MOL依旧为期<strong>七天</strong>，给予选手们充分的时间完赛。另外，我们依旧保持着组委会完全由IOL国家队员组成的优良传统，严选题目质量，确保选手们在做题时有足够好的体验与足够丰富的收获。以及最重要地，第三届MOL依旧<strong>无需报名，无需缴费，无参赛门槛</strong>，并且会发放激励性质的<strong>获奖证书与奖金</strong>。本届MOL的赛制和MOL1基本相同，仅有<strong>五道个人赛</strong>试题，每题20分，共计100分。本次比赛<strong>没有团队赛</strong>，但依旧欢迎大家在交流群内分享讨论不涉及题目答案的内容。经过测题组的反复检验，本届MOL绝对有质量保障，请大家放心食用！</p>
+        </div>
+        
+        <h2 id="about-title">关于我们</h2>
+        <div id="about-content">
+            <div>
+                <h3>MOL是什么？</h3>
+                <p><strong>MOL(Mirturl Linguistics Open)</strong>是由2023年国际语言学奥林匹克竞赛中国国家队自主组织的<strong>语言学公开挑战赛</strong>。本比赛采取<strong>线上进行</strong>的形式，不设任何年龄或年级限制，不收取任何报名费用，<strong>无任何参赛门槛</strong>，旨在向社会推广语言学这一多元多彩的学科。
+                </p>
+            </div>
+            <div>
+                <h3>“半咸水”是什么？</h3>
+                <p>“半咸水”是出现在<strong>IOL2023团队题</strong>“Murrinh-Patha语”中的一个词，在该语言中为<strong>"Mirturl"</strong>，给队员们留下了深刻的印象。“半咸水”还象征着我们来自的土地：<strong>长江下游入海口</strong>，淡水与咸水交汇之地。这个词汇就像妙趣横生的语言一样，传递着一群人的历史与文化，表达着一群人的思想与生命。 </p>
+            </div>
+            <div>
+                <h3>MOL的题目从何而来？</h3>
+                <p>MOL的题目全部由IOL<strong>国家队员</strong>们<strong>自主命题</strong>，和IOLC等主流比赛的命题风格将不尽相同，力图更加<strong>有趣</strong>、更加<strong>新颖</strong>、更能传播弘扬语奥的<strong>独特文化</strong>。我们衷心希望能给参赛的各位选手带来更特别的参赛体验。 </p>
+            </div>
+        </div>
+        
+        <h2>MOL如何举办？ </h2>
+        <div id="contest-content">
+            <div>
+                <p>第三届MOL于2025年<strong>2月3日至9日</strong>在线上举行。本网站已经以<strong>pdf格式公布了题目</strong>。选手可以使用<strong>邮箱拍照或扫描</strong>提交答卷。我们的题目推荐用时与IOL相同，大约在6个小时左右。尽管如此，所有提交入口均会开启一周，以给予选手充分的时间完成比赛。</p>
+                <p>提交截止一段时间后，MOL官方会将批改完毕的卷子<strong>以邮箱的方式</strong>发给各位选手，并在官网上公布<strong>答案及解析</strong>。成绩靠前的选手的分数也将会在官网上公布。我们将颁发个人赛与总分两种奖项，并发布激励性质的奖金。</p>
+            </div>
+            <div class="qr-code" class="horizontally-center">
+                <figure>
+                    <img src="../group-qr.jpg" alt="Wechat Group QR Code" width="200">
+                    <figcaption>微信交流群</figcaption>
+                </figure>
+                <figure>
+                    <img src="../account-qr.png" alt="Subscription Account" width="200">
+                    <figcaption>微信公众号</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <h2>往届赛事</h2>
+        <div id="past-contests">
+            <div class="horizontally-center" id="mol1-link">
+                <a href="../mol1/index.html">
+                <div class="image-container"><img src="../mol1/logo.png"></div>
+                <p>MOL1</p>
+                <p>2024/1/29-2/4</p></a>
+            </div>
+            <div class="horizontally-center" id="mol2-link">
+                <a href="../mol2/index.html">
+                <div class="image-container"><img src="../mol2/logo.png"></div>
+                <p>MOL2</p>
+                <p>2024/7/8-7/14</p></a>
+            </div>
+        </div>
+        <a href="../logo_design.html">Logo设计介绍</a></p>
+        <footer>
+        半咸水QwQ 关注MOL喵<br>
+        微信公众号：MOL半咸水语言学公开赛<br>
+        邮箱：mirturlol@163.com
+        </footer>
+      </main>
+      <script>
+        const daycount = document.getElementById("daycount");
+        const hourcount = document.getElementById("hourcount");
+        const currentDate = new Date();
+        const targetDate = new Date("2025-02-10T00:00:00");
+        const hoursLeft = Math.round((targetDate.getTime()-currentDate.getTime())/86400000*24);
+        daycount.textContent = Math.floor(hoursLeft/24);
+        hourcount.textContent = hoursLeft%24;
+        daycount.style.color = '#468d8d';
+        hourcount.style.color = '#468d8d';
+    </script>
+</body>
+
+</html>
