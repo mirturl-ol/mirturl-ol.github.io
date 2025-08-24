@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh">
+  
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="image" href="logo.png" />
+    <link rel="preload" as="image" href="main_visual.png" />
+    <!--<link rel="stylesheet" href="/_next/static/css/28f2f99a9c7f73b2.css" data-precedence="next"
+    />
+    <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-49620ecc6ed4595c.js"
+    />
+    <script src="/_next/static/chunks/4bd1b696-acecb2965b951540.js" async="">
+    </script>
+    <script src="/_next/static/chunks/1684-3ffa190483a9505b.js" async="">
+    </script>
+    <script src="/_next/static/chunks/main-app-f8a323f47f1fab2c.js" async="">
+    </script>
+    <script src="/_next/static/chunks/2108-6513a0cde0e28617.js" async="">
+    </script>
+    <script src="/_next/static/chunks/app/layout-440b3a0193378efe.js" async="">
+    </script>
+    <script src="/_next/static/chunks/6874-594e2770a8006822.js" async="">
+    </script>
+    <script src="/_next/static/chunks/4212-a78cd863a6e0e2b4.js" async="">
+    </script>
+    <script src="/_next/static/chunks/app/page-5d72bb36f8b87418.js" async="">
+    </script>-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../stylesheets/additional_style.css">
+    <title>MOL4</title>
+    <meta name="description" content="比赛管理系统" />
+    <!--<script>
+      document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el = >document.head.appendChild(el))
+    </script>
+    <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule="">
+    </script>-->
+  </head>
+
+  <body class="min-h-screen bg-white lg:text-lg">
+    <nav class="sticky top-0 shadow inset-x-0 z-50 bg-white">
+      <div class="w-full pl-4 pr-4 md:pl-6 md:pr-12">
+        <div class="flex items-center justify-between py-4">
+          <div class="flex items-center">
+            <a class="flex items-center" href="/">
+              <img src="logo.png" alt="MOL4 Logo" class="h-12 w-auto sm:h-14" />
+            </a>
+            <!-- pull the links closer to the logo and left edge -->
+            <div class="flex items-center space-x-4 ml-4 md:ml-4">
+              <a class="text-black hover:text-[#a36e18] transition-colors duration-200" href="#top">
+                首页</a>
+              <a class="text-black hover:text-[#a36e18] transition-colors duration-200" href="#announcements">
+                公告</a>
+              <a class="text-black hover:text-[#a36e18] transition-colors duration-200" href="#rules">
+                规则</a>
+            </div>
+          </div>
+
+          <div class="relative inline-block" data-dropdown>
+            <span class="inline-flex items-center text-center gap-2 text-black hover:text-[#a36e18] transition-colors duration-200">
+              
+            </span>
+
+            <!-- Trigger (span) 
+            <span
+              data-trigger
+              role="button"
+              tabindex="0"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="inline-flex items-center text-center gap-2 cursor-pointer select-none
+                   text-black hover:text-[#a36e18] transition-colors duration-200 focus:outline-none">
+              加载中
+              <svg class="h-4 w-4 text-gray-600 transition-transform duration-200" data-caret
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </span>
+
+            <div data-panel
+                class="absolute left-[-15px] mt-[30px] z-50 min-w-[7em] overflow-hidden
+                        grid grid-rows-[0fr] transition-[grid-template-rows] duration-200 ease-out
+                        bg-white text-center">
+              <div class="min-h-0">
+                <span class="block px-3 py-3 cursor-pointer border-2 border-gray-100 transition-bg duration-200 hover:bg-[#a36e18] hover:text-white">进入团队赛</span>
+                <span class="block px-3 py-3 cursor-pointer border-2 border-gray-100 transition-bg duration-200 hover:bg-[#a36e18] hover:text-white">退出登录</span>
+                <span class="block px-3 py-3 cursor-pointer border-2 border-gray-100 transition-bg duration-200 hover:bg-[#a36e18] hover:text-white">团队管理</span>
+              </div>
+            </div>
+          </div>-->
+
+        </div>
+      </div>
+    </nav>
+    <!--<script>
+      (() => {
+        document.querySelectorAll('[data-dropdown]').forEach(root => {
+          const trigger = root.querySelector('[data-trigger]');
+          const panel = root.querySelector('[data-panel]');
+          const caret = root.querySelector('[data-caret]');
+          let open = false;
+
+          const setOpen = (v) => {
+            open = v;
+            trigger.setAttribute('aria-expanded', String(v));
+            panel.classList.toggle('grid-rows-[1fr]', v);
+            panel.classList.toggle('grid-rows-[0fr]', !v);
+            if (caret) caret.style.transform = v ? 'rotate(180deg)' : 'rotate(0deg)';
+          };
+
+          trigger.addEventListener('click', () => setOpen(!open));
+          trigger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(!open); }
+            if (e.key === 'Escape') setOpen(false);
+          });
+
+          // Optional: click outside to close
+          document.addEventListener('click', (e) => {
+            if (!root.contains(e.target)) setOpen(false);
+          });
+        });
+      })();
+    </script>-->
+    <header class="relative w-full md:grid md:grid-cols-2 md:items-stretch md:max-h-[90vh] md:overflow-hidden"" id="top">
+      <!-- LEFT: Hero image (mobile & desktop) -->
+      <div class=" flex md:col-span-1 md:h-full xl:w-[40vw] xl:justify-end xl:bg-black">
+          <img src="main_visual.png" alt="Main visual"
+            class="w-full h-auto object-cover relative z-0 md:w-[40vw]" />
+      
+        <!-- Mobile-only gradient + chevron + bottom text -->
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 top-[66%] bg-gradient-to-b from-transparent via-black/60 to-black md:hidden"></div>
+
+        <button id="hero-scroll" aria-label="Scroll down"
+          class="absolute top-10 right-4 z-30 inline-flex h-10 w-10 items-center justify-center rounded-full
+                bg-black/60 hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-white/70 backdrop-blur transition
+                md:hidden">
+          <svg class="h-8 w-8 text-white rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 14l-7-7-7 7" />
+          </svg>
+        </button>
+
+        <!-- Mobile-only title + countdown over image -->
+        <div class="absolute bottom-0 w-full flex justify-center md:hidden">
+          <div class="w-full text-left px-6 py-8 bg-gradient-to-b from-transparent to-black">
+            <h1 class="font-heading-dark text-5xl text-left ml-1 mb-5 text-white md:text-[#a36e18] xl:text-7xl">加载中...</h1>
+
+            <!-- Mobile countdown (single row, flex) -->
+            <div class="flex items-center gap-4 max-w-2xl mx-auto font-body-dark ml-2 font-normal text-white">
+              敬请期待 / 阅读<a href="#intro" class="em-light">赛事介绍</a>
+              <!--<div class="flex items-center gap-1 font-normal">
+                <div class="relative overflow-hidden h-10 w-4 flex items-center justify-center">
+                  <div class="animate-slide-down em-dark">0</div>
+                </div>
+                <span>天</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <div class="relative overflow-hidden h-10 w-4 flex items-center justify-center">
+                  <div class="animate-slide-down em-dark md:text-[#a36e18]">0</div>
+                </div>
+                <span>时</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <div class="relative overflow-hidden h-10 w-4 flex items-center justify-center">
+                  <div class="animate-slide-down em-dark md:text-[#a36e18]">0</div>
+                </div>
+                <span>分</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <div class="relative overflow-hidden h-10 w-4 flex items-center justify-center">
+                  <div class="animate-slide-down em-dark md:text-[#a36e18]">0</div>
+                </div>
+                <span>秒</span>
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Desktop-only white panel (title → countdown (2 lines) → gold boxes) -->
+      <div class="hidden md:flex md:col-span-1 md:bg-white md:flex-col md:justify-center md:max-h-[90vh] xl:w-[50vw]">
+        <!-- Title (light + black text) -->
+        <h1 class="font-heading-light text-5xl text-left mb-6 text-[#a36e18] xl:text-7xl">MOL4即将开始</h1>
+
+        <!-- Desktop countdown: two lines (label on its own line, values on next line) -->
+        <div class="font-body-light text-xl">
+          敬请期待 / 阅读<a href="#intro" class="em-light">赛事介绍</a>
+          <!--<div class="text-base mb-2">距离比赛结束还有</div>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1">
+              <div class="relative overflow-hidden h-10 w-4 flex items-center justify-center">
+                <div class="animate-slide-down em-dark">0</div>
+              </div>
+              <span class="text-black">天</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <div class="relative overflow-hidden h-10 w-4 flex items-center justify-center">
+                <div class="animate-slide-down em-dark">0</div>
+              </div>
+              <span class="text-black">时</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <div class="relative overflow-hidden h-10 w-4 flex items-center justify-center">
+                <div class="animate-slide-down em-dark">0</div>
+              </div>
+              <span class="text-black">分</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <div class="relative overflow-hidden h-10 w-4 flex items-center justify-center">
+                <div class="animate-slide-down em-dark">0</div>
+              </div>
+              <span class="text-black">秒</span>
+            </div>
+          </div>-->
+        </div>
+
+        <!-- Gold boxes (inside header on desktop) -->
+        <!--<div class="mt-8">
+          <div class="flex flex-row flex-wrap gap-3">
+            <a href="#"
+              class="group flex w-[40%] min-w-[200px] items-center p-4 border-2 border-[#a36e18] bg-white rounded-none
+                      transition-colors duration-200 hover:bg-[#a36e18] cursor-pointer
+                      focus:outline-none focus:ring-2 focus:ring-[#a36e18]/40"
+              aria-label="个人赛">
+              <svg class="h-8 w-8 flex-shrink-0 text-[#a36e18] transition-colors duration-200 group-hover:text-white"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21a8 8 0 1 0-16 0"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <div class="ml-3 leading-tight">
+                <div class="text-2xl group-hover:text-white font-heading-light">个人赛</div>
+                <div class="text-sm text-[#a36e18] group-hover:text-white font-normal">点击下载PDF</div>
+              </div>
+            </a>
+            <a href="#"
+              class="group flex w-[40%] min-w-[200px] items-center p-4 border-2 border-[#a36e18] bg-white rounded-none
+                      transition-colors duration-200 hover:bg-[#a36e18] cursor-pointer
+                      focus:outline-none focus:ring-2 focus:ring-[#a36e18]/40"
+              aria-label="团队赛">
+              <svg class="h-8 w-8 flex-shrink-0 text-[#a36e18] transition-colors duration-200 group-hover:text-white"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <div class="ml-3 leading-tight">
+                <div class="text-2xl group-hover:text-white font-heading-light">团队赛</div>
+                <div class="text-sm text-[#a36e18] group-hover:text-white font-normal">点击跳转至网页</div>
+              </div>
+            </a>
+          </div>
+        </div>-->
+      </div>
+    </header>
+
+    <!-- FIRST SECTION (hide on desktop since boxes live in header on md+) -->
+    <section class="w-full flex justify-center px-4 pt-0 pb-6 mt-8 md:hidden">
+      <!----
+      <div class="flex flex-row flex-nowrap items-stretch gap-3 md:flex-column">
+        <a href="#"
+          class="group flex shrink-0 w-[42.5vw] items-center p-4 border-2 border-[#a36e18] bg-white rounded-none
+                transition-colors duration-200 hover:bg-[#a36e18] cursor-pointer
+                focus:outline-none focus:ring-2 focus:ring-[#a36e18]/40"
+          aria-label="个人赛">
+          <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#a36e18] transition-colors duration-200 group-hover:text-white"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21a8 8 0 1 0-16 0"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <div class="ml-3 sm:ml-4 leading-tight">
+            <div class="text-2xl lg:text-3xl group-hover:text-white font-heading-light">个人赛</div>
+            <div class="text-sm text-[#a36e18] group-hover:text-white font-normal">点击下载PDF</div>
+          </div>
+        </a>
+        <a href="#"
+          class="group flex shrink-0 w-[42.5vw] items-center p-4 border-2 border-[#a36e18] bg-white rounded-none
+                transition-colors duration-200 hover:bg-[#a36e18] cursor-pointer
+                focus:outline-none focus:ring-2 focus:ring-[#a36e18]/40"
+          aria-label="团队赛">
+          <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#a36e18] transition-colors duration-200 group-hover:text-white"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <div class="ml-3 sm:ml-4 leading-tight">
+            <div class="text-2xl lg:text-3xl group-hover:text-white font-heading-light">团队赛</div>
+            <div class="text-sm text-[#a36e18] group-hover:text-white font-normal">点击跳转至网页</div>
+          </div>
+        </a>
+      </div>-->
+    </section>
+
+  <div class="pt-10 md:pb-[2rem] md:mt-10 xl:mt-20 md:flex md:gap-8 md:max-w-[70vw] md:mx-auto md:justify-between ">
+  <!-- NAV PANEL -->
+    <aside
+      class="hidden md:block sticky top-40 h-[60vh] min-w-20 max-w-100 w-[15vw] shrink-0 text-[#cc8a1e]"
+      aria-label="Section navigation"
+    >
+      <!-- Vertical line -->
+      <ol id="section-nav"
+          class="relative h-full pl-8 border-l-2 border-[#cc8a1e] flex flex-col justify-between">
+        <!-- Each li maps to a section in <main> by href -->
+        <li class="hidden xl:block relative">
+          <a href="#top"
+            class="group flex items-center gap-3 -ml-8 pl-8 py-1 hover:text-[#a36e18] transition-colors duration-200">
+            <!-- Bullet -->
+            <span
+              class="absolute left-[-37px] top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-[#cc8a1e] ring-2 ring-[#cc8a1e]"
+              aria-hidden="true"></span>
+            <span class="nav-label">顶部</span>
+          </a>
+        </li>
+        <li class="relative">
+          <a href="#submit"
+            class="group flex items-center gap-3 -ml-8 pl-8 py-1 hover:text-[#a36e18] transition-colors duration-200">
+            <!-- Bullet -->
+            <span
+              class="absolute left-[-37px] top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-[#cc8a1e] ring-2 ring-[#cc8a1e]"
+              aria-hidden="true"></span>
+            <span class="nav-label">提交与反馈</span>
+          </a>
+        </li>
+
+        <li class="relative">
+          <a href="#announcements"
+            class="group flex items-center gap-3 -ml-8 pl-8 py-1 hover:text-[#a36e18] transition-colors duration-200">
+            <span
+              class="absolute left-[-37px] top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-[#cc8a1e] ring-2 ring-[#cc8a1e]"
+              aria-hidden="true"></span>
+            <span class="nav-label">公告</span>
+          </a>
+        </li>
+
+        <li class="relative">
+          <a href="#intro"
+            class="group flex items-center gap-3 -ml-8 pl-8 py-1 hover:text-[#a36e18] transition-colors duration-200">
+            <span
+              class="absolute left-[-37px] top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-[#cc8a1e] ring-2 ring-[#cc8a1e]"
+              aria-hidden="true"></span>
+            <span class="nav-label">赛事介绍</span>
+          </a>
+        </li>
+        <li class="hidden xl:block relative">
+          <a href="#bottom"
+            class="group flex items-center gap-3 -ml-8 pl-8 py-1 hover:text-[#a36e18] transition-colors duration-200">
+            <!-- Bullet -->
+            <span
+              class="absolute left-[-37px] top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-[#cc8a1e] ring-2 ring-[#cc8a1e]"
+              aria-hidden="true"></span>
+            <span class="nav-label">底部</span>
+          </a>
+        </li>
+      </ol>
+    </aside>
+    <main class="max-w-3xl px-10">
+      <section class="" id="submit">
+        <h2 class="text-4xl lg:text-5xl font-heading-light" >提交与反馈</h2>
+          <div class="mt-3">
+            <h3 class="text-xl lg:text-2xl font-heading-light text-black">提交入口</h3>
+            <p>请将每道题的答案分别写在一张A4纸上，拍照或扫描答案，提交至邮箱mirturlol@163.com</p>
+            <p>截至时间：8/31 23:59 (UTC+8)</p>
+          </div>
+          <div class="mt-3">
+            <h3 class="text-xl lg:text-2xl font-heading-light text-black">赛后问卷</h3>
+            <p><a href="https://www.wjx.cn/vm/hwSZYY7.aspx#" target="_blank" class="link-light underline">点击打开问卷星链接</a>，或扫描以下二维码</p>
+            <img class="mt-3" src="../../images/subscription-account.jpg" width="200">
+        </div>
+      </section>
+      <section class="mt-10 xl:mt-20 scroll-mt-[50px]" id="announcements">
+        <h2 class="text-4xl lg:text-5xl font-heading-light">公告</h2>
+        <div role="tablist" class="mt-3 flex gap-6 border-b border-gray-200">
+          <button role="tab" aria-selected="true" data-target="#tab-left"
+                  class="px-1 pb-2 text-base cursor-pointer text-black no-underline
+                        aria-selected:text-[#a36e18] aria-selected:underline decoration-2 underline-offset-8
+                        [text-decoration-color:#a36e18] link-light">
+            个人赛
+          </button>
+          <button role="tab" aria-selected="false" data-target="#tab-right"
+                  class="px-1 pb-2 text-base cursor-pointer text-black no-underline
+                        aria-selected:text-[#a36e18] aria-selected:underline decoration-2 underline-offset-8
+                        [text-decoration-color:#a36e18] link-light">
+            团队赛
+          </button>
+        </div>
+        <!-- Panels -->
+        
+        <div id="tab-left"  role="tabpanel" class="pt-4">
+          <p class="mt-3">暂无</p>
+          <!--<details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">你的段落文字</summary>
+              <p class="mt-3">你的段落文字</p>
+            </details>
+            <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">你的段落文字</summary>
+              <p class="mt-3">你的段落文字</p>
+            </details>-->
+        </div>
+        <div id="tab-right" role="tabpanel" class="pt-4 hidden">
+          <p class="mt-3">暂无</p>
+          <!--<details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">你的段落文字</summary>
+              <p class="mt-3">你的段落文字</p>
+            </details>
+            <details class="mt-3">
+              <summary class="text-xl  lg:text-2xl font-heading-light text-black">你的段落文字</summary>
+              <p class="mt-3">你的段落文字</p>
+            </details>-->
+        </div>
+      </section>
+      <script>
+        const tabs = document.querySelectorAll('[role="tab"][data-target]');
+        const panels = document.querySelectorAll('[role="tabpanel"]');
+        tabs.forEach(tab => tab.addEventListener('click', () => {
+          tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+          panels.forEach(p => p.classList.add('hidden'));
+          tab.setAttribute('aria-selected', 'true');
+          document.querySelector(tab.dataset.target)?.classList.remove('hidden');
+        }));
+      </script>
+      <section class="mt-10 xl:mt-20 scroll-mt-[50px]" id="intro">
+        <h2 class="text-4xl lg:text-5xl font-heading-light">赛事介绍</h2>
+          <p class="mt-3">第四届半咸水语奥公开赛（MOL4）火热进行中！无论您是否了解语言学或语奥，是否参与了前三届MOL，都可以自由了解并参与我们的比赛，在“半咸水”的文化海洋中尽情畅游。</p>
+          <p>与前三届相同，第三届MOL依旧为期<strong class="em-light">七天</strong>（8.25~8.31），<strong class="em-light">无需报名，无需缴费，无参赛门槛</strong>，并且会发放激励性质的<strong class="em-light">获奖证书与奖金</strong>。本届MOL的赛制和MOL2基本相同，包含<strong class="em-light">个人赛和团队赛</strong>，但是团队赛新增了<strong class="em-light">解密和互动</strong>的要素。</p>
+          <h3 class="text-2xl lg:text-3xl mt-5 xl:mt-8 font-heading-light">团队赛流程介绍</h3>
+          <p class="mt-3">MOL4团队赛的主题为“PH结构的语奥团队赛”。您可以组成<strong class="em-light">1-4人的队伍</strong>参赛。在比赛中，将有一部分小题为正常的语奥题型，另一部分标有“PH”字样的为新题型，以及一道需要用到之前所有小题信息的<strong class="em-light">Final Meta</strong>（最终元谜题）。在比赛期间，解出Final Meta会被视为<strong class="em-light">“完赛”</strong>，并获取不多于总分50%的一定分数；将所有正常语奥小题或有额外要求的小题的答案整理提交至官方邮箱被视为<strong class="em-light">“做完”</strong>，组委会将在比赛结束后批改，这些提交至邮箱的题目在总分值中的占比中不少于50%。</p>
+          <p>为助理选手完赛、避免卡关，比赛开始时每个队伍会获得<strong class="em-light">固定数量的“提示点”</strong>（不随时间变化），可供购买“PH”小题的预设提示或人工提示，其中人工提示是指给组委会发送一条信息询问如何解题，我们会在每日8:00-24:00处理信息并尽快回复。在完赛之后，未使用完的提示点会以一定比例结算为<strong class="em-light">附加分</strong>，与总分相加作为最终成绩。您还可以免费向我们发送“站内信”以反馈网站问题等内容，但站内信不一定会收到回复，也不会回复与题目相关的信息。</p>
+          <h3 class="text-2xl lg:text-3xl mt-5 xl:mt-8 font-heading-light">常见问题解答</h3>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">MOL是什么？</summary>
+              <p class="mt-3"><strong class="em-light">MOL(Mirturl Linguistics Open)</strong>是由2023年国际语言学奥林匹克竞赛中国国家队自主组织的<strong class="em-light">语言学公开挑战赛</strong>。本比赛采取<strong class="em-light">线上进行</strong>的形式，不设任何年龄或年级限制，不收取任何报名费用，<strong class="em-light">无任何参赛门槛</strong>，旨在向社会推广语言学这一多元多彩的学科。
+              </p>
+            </details>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">“半咸水”是什么？</summary>
+              <p class="mt-3">“半咸水”是出现在<strong class="em-light">IOL2023团队题</strong>“Murrinh-Patha语”中的一个词，在该语言中为<strong class="em-light">"Mirturl"</strong>，给队员们留下了深刻的印象。“半咸水”还象征着我们来自的土地：长江下游入海口，淡水与咸水交汇之地。这个词汇就像妙趣横生的语言一样，传递着一群人的历史与文化。 </p>
+          </details>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">MOL的题目从何而来？</summary>
+              <p class="mt-3">MOL的题目全部由IOL<strong class="em-light">国家队员</strong>们<strong class="em-light">自主命题</strong>，和IOLC等主流比赛的命题风格将不尽相同，力图更加<strong class="em-light">有趣</strong>、更加<strong class="em-light">新颖</strong>、更能传播弘扬语奥的独特文化，希望能给参赛的各位选手带来更特别的参赛体验。 </p>
+          </details>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">队伍如何组建？人数有要求吗？</summary>
+              <p class="mt-3">本次团队赛支持<strong class="em-light">1–4人组队</strong>，您可以自由选择与朋友组队，或独自参赛。团队赛交卷时需在答卷上写明<strong class="em-light">队伍名及所有队员的参赛昵称</strong>；对于不参加个人赛的队员，则需<strong class="em-light">额外注明邮箱或联系方式</strong>，以便发奖。此外，本届取消了“随机匹配组队”机制，因此无需担心被分配到陌生队友。</p>
+              <p>若您选择只参加个人赛，完全不参加团队赛，也不会影响个人赛的流程或奖项颁发。 </p>
+          </details>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">本次团队赛到底是“语奥”还是“PH”？</summary>
+              <p class="mt-3">本次比赛的全称是“第四届半咸水语言学公开赛团队赛”。从性质上讲，它仍然是语奥：遵循<strong class="em-light">“不需要额外知识、不需要搜索”</strong>的核心原则。但在形式上借鉴了<strong class="em-light">Puzzle Hunt的结构</strong>————比赛由若干小题和一道Final Meta组成。解出FM是完赛的唯一标准。换句话说，这是一次“PH结构的语奥团队赛”，既有传统语奥题型，也有PH的独特设计。</p>
+          </details>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">什么叫“完赛不等于做完”？怎么算分？</summary>
+              <p class="mt-3"><strong class="em-light">“完赛”</strong>的定义是解出<strong class="em-light">Final Meta</strong>；<strong class="em-light">“做完”</strong>是指<strong class="em-light">所有题目均有答案并提交到官方邮箱</strong>（mirturlol@163.com）。比赛最终成绩由两部分组成：完赛本身可得一定分数（不超过50%），剩余分数取决于提交的小题答案。提交不限次数，以最后一次为准。此外，比赛不设竞速属性，7天内任何时间完赛都有效，因此解题速度不会影响成绩。</p>
+          </details>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">提示点怎么用？</summary>
+              <p class="mt-3">凡<strong class="em-light">题号带“PH”</strong>的题目可使用提示点。提示分为<strong class="em-light">“预设提示”</strong>（常见思路引导）和<strong class="em-light">“人工提示”</strong>（提交具体问题，由组委会回复）。人工提示仅限于对应题目，不涉及非PH题。提示点不会随时间变化。<strong class="em-light">未使用的提示点会结算为附加分</strong>，帮助提高总分。即便全开提示，也仍有可能获得理论满分，但难度极高。</p>
+          </details>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">不竞速是不是就没意思了？</summary>
+              <p class="mt-3">并不会。除了常规成绩，我们还设有<strong class="em-light">特别奖：</strong></p>
+              <p>	•	最速完赛奖：从开始解题到完赛用时最短的队伍；</p>
+	            <p> •	0hint完赛奖：全程未使用提示完成FM的队伍。</p>
+              <p>获奖队伍将获得定制奖状，若经费充足还会有奖金，保证比赛乐趣与挑战兼具。</p>
+          </details>
+          <details class="mt-3">
+              <summary class="text-xl lg:text-2xl font-heading-light text-black">站内信和人工提示有什么区别？</summary>
+              <p class="mt-3">站内信是<strong class="em-light">私聊组委会</strong>的渠道，用于<strong class="em-light">反馈问题</strong>（如题目有误、提示点扣除错误等）。除非特殊情况，其他内容（如闲聊）不会得到回复。而人工提示是<strong class="em-light">用提示点购买</strong>的，保证会得到与该题相关的<strong class="em-light">帮助性答复</strong>，二者功能完全不同。</p>
+          </details>
+      </section>
+    </main>
+  </div>
+    <footer class="mt-10 xl:mt-20 mb-10 w-[80vw] mx-auto" id="bottom">
+      <div class="md:flex md:gap-12 md:flex-row-reverse md:items-start md:justify-between">
+        <div>
+          <h2 class="text-4xl lg:text-5xl font-heading-light">联系我们</h2>
+          <div class="flex items-start gap-6 mt-3">
+            <figure class="text-center">
+              <img
+                src="../../images/subscription_account.jpg"
+                alt="公众号"
+                class="w-15 h-15 md:w-[14vw] md:h-[14vw] object-cover"
+              />
+              <figcaption class="mt-2 text-gray-700">公众号</figcaption>
+            </figure>
+
+            <figure class="text-center">
+              <img
+                src="../../images/wechat_group.jpg"
+                alt="微信交流群"
+                class="w-15 h-15 md:w-[14vw] md:h-[14vw] object-cover"
+              />
+              <figcaption class="mt-2 text-gray-700">微信交流群</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-8 md:mt-0">              
+          <h2 class="text-4xl lg:text-5xl font-heading-light">往期赛事</h2>
+          <div class="flex items-start mt-3">
+            <a href="../mol1/index.html" class="hover:text-[#a36e18] transition-200"><figure class="text-center">
+              <img
+                src="../../images/mol1_logo.png"
+                alt="MOL1"
+                class="w-[30vw] h-[30vw] md:w-[14vw] md:h-[14vw] object-cover"
+              />
+              <figcaption class="mt-2">MOL1</figcaption>
+            </figure></a>
+            <a href="../mol2/index.html" class="hover:text-[#a36e18] transition-200"><figure class="text-center">
+              <img
+                src="../../images/mol2_logo.png"
+                alt="MOL2"
+                class="w-[30vw] h-[30vw] md:w-[14vw] md:h-[14vw] object-cover"
+              />
+              <figcaption class="mt-2">MOL2</figcaption>
+            </figure></a>
+            <a href="../mol3/index.html" class="hover:text-[#a36e18] transition-200"><figure class="text-center">
+              <img
+                src="../../images/mol3_logo.png"
+                alt="MOL3"
+                class="w-[30vw] h-[30vw] md:w-[14vw] md:h-[14vw] object-cover"
+              />
+              <figcaption class="mt-2">MOL3</figcaption>
+            </figure></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const btn = document.getElementById('hero-scroll');
+        const hero = document.querySelector('header'); // your hero container
+
+        if (btn && hero) {
+          btn.addEventListener('click', () => {
+            const targetY = hero.getBoundingClientRect().bottom + window.scrollY - 50;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+          });
+        }
+      })();
+  </script>
+
+
+    <!--$-->
+    <!--
+    <script src="/_next/static/chunks/webpack-49620ecc6ed4595c.js" async="">
+    </script>
+    <script>
+      (self.__next_f = self.__next_f || []).push([0])
+    </script>
+    <script>
+      self.__next_f.push([1, "1:\"$Sreact.fragment\"\n2:I[3574,[\"2108\",\"static/chunks/2108-6513a0cde0e28617.js\",\"7177\",\"static/chunks/app/layout-440b3a0193378efe.js\"],\"Providers\"]\n3:I[7555,[],\"\"]\n4:I[1295,[],\"\"]\n5:I[894,[],\"ClientPageRoot\"]\n6:I[1057,[\"2108\",\"static/chunks/2108-6513a0cde0e28617.js\",\"6874\",\"static/chunks/6874-594e2770a8006822.js\",\"4212\",\"static/chunks/4212-a78cd863a6e0e2b4.js\",\"8974\",\"static/chunks/app/page-5d72bb36f8b87418.js\"],\"default\"]\n9:I[9665,[],\"OutletBoundary\"]\nc:I[4911,[],\"AsyncMetadataOutlet\"]\ne:I[9665,[],\"ViewportBoundary\"]\n10:I[9665,[],\"MetadataBoundary\"]\n12:I[6614,[],\"\"]\n:HL[\"/_next/static/css/28f2f99a9c7f73b2.css\",\"style\"]\n"])
+    </script>
+    <script>
+      self.__next_f.push([1, "0:{\"P\":null,\"b\":\"mxrlogOZ0W8VQEBlaMLg_\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/28f2f99a9c7f73b2.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh\",\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$L2\",null,{\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L5\",null,{\"Component\":\"$6\",\"searchParams\":{},\"params\":{},\"promises\":[\"$@7\",\"$@8\"]}],null,[\"$\",\"$L9\",null,{\"children\":[\"$La\",\"$Lb\",[\"$\",\"$Lc\",null,{\"promise\":\"$@d\"}]]}]]}],{},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"bVHaD6bZKfFYoAUZc7Hcov\",{\"children\":[[\"$\",\"$Le\",null,{\"children\":\"$Lf\"}],null]}],[\"$\",\"$L10\",null,{\"children\":\"$L11\"}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$12\",\"$undefined\"],\"s\":false,\"S\":true}\n"])
+    </script>
+    <script>
+      self.__next_f.push([1, "13:\"$Sreact.suspense\"\n14:I[4911,[],\"AsyncMetadata\"]\n7:{}\n8:{}\n11:[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$13\",null,{\"fallback\":null,\"children\":[\"$\",\"$L14\",null,{\"promise\":\"$@15\"}]}]}]\n"])
+    </script>
+    <script>
+      self.__next_f.push([1, "b:null\n"])
+    </script>
+    <script>
+      self.__next_f.push([1, "f:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\na:null\n"])
+    </script>
+    <script>
+      self.__next_f.push([1, "d:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Mol4 比赛系统\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"比赛管理系统\"}]],\"error\":null,\"digest\":\"$undefined\"}\n15:{\"metadata\":\"$d:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])
+    </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"rayId":"971605b82cdeaa02","version":"2025.8.0","r":1,"token":"abf1a847e13c44bda6271c18fbdf896e","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}'
+    crossorigin="anonymous">
+    </script>-->
+</body></html>
