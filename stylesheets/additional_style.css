@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'HYQuanTangShiJ';
+    src: url('../fonts/HYQuanTangShiJ.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 400;
+    scroll-behavior: smooth;
+}
+p{
+    font-family: 'Noto Sans SC', sans-serif;
+    line-height:1.8em;
+    text-align:justify;
+}
+/* Tailwind utility overrides */
+.font-heading-dark{
+    font-family: 'HYQuanTangShiJ', serif;
+    font-weight:500;
+    color:#d8d8d8;
+}
+.font-heading-light{
+    font-family: 'HYQuanTangShiJ', serif;
+    font-weight:500;
+    color:#a36e18;
+}
+.font-body-dark {
+    font-family: 'Noto Sans SC', sans-serif;
+    color:#d8d8d8;
+}
+.link-dark, .em-dark{
+    color: #CC8A1E;
+    font-weight:500;
+}
+.link-dark:hover{
+    transition:150ms color;
+    color: #a36e18;
+}
+.link-light, .em-light{
+    color: #CC8A1E;
+    font-weight:500;
+}
+.link-light:hover{
+    transition:150ms color;
+    color: #a36e18;
+}
