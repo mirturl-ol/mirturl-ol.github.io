@@ -4,8 +4,9 @@
   <head>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="../../images/mol5_logo.png">
+    <link rel="icon" href="logo.png">
     <link rel="preload" as="image" href="../../images/mol5_visual.png" />
+    <link rel="preload" href="../../fonts/HYQuanTangShiJ.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
@@ -154,24 +155,6 @@
                 <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">点击下载PDF</div>
               </div>
             </a>
-            <a href="#"
-              class="group flex w-[40%] min-w-[200px] items-center p-4 border-2 border-[#94a9b9] bg-white rounded-none
-                      transition-colors duration-200 hover:bg-[#94a9b9] cursor-pointer
-                      focus:outline-none focus:ring-2 focus:ring-[#94a9b9]/40"
-              aria-label="团队赛">
-              <svg class="h-8 w-8 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-              <div class="ml-3 leading-tight">
-                <div class="text-2xl group-hover:text-white font-heading-light">团队赛</div>
-                <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">点击跳转至网页</div>
-              </div>
-            </a>
           </div>
         </div>
       
@@ -198,24 +181,7 @@
             <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">点击下载PDF</div>
           </div>
         </a>
-        <a href="#"
-          class="group flex shrink-0 w-[42.5vw] items-center p-4 border-2 border-[#94a9b9] bg-white rounded-none
-                transition-colors duration-200 hover:bg-[#94a9b9] cursor-pointer
-                focus:outline-none focus:ring-2 focus:ring-[#94a9b9]/40"
-          aria-label="团队赛">
-          <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          <div class="ml-3 sm:ml-4 leading-tight">
-            <div class="text-2xl lg:text-3xl group-hover:text-white font-heading-light">团队赛</div>
-            <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">点击跳转至网页</div>
-          </div>
-        </a>
+        
       </div>
     </section>
 
@@ -288,7 +254,7 @@
             <h3 class="text-xl lg:text-2xl font-heading-light text-black">提交入口</h3>
             <p>请将每道题的答案分别写在一张A4纸上，拍照或扫描答案，提交至邮箱mirturlol@163.com</p>
             <p>截至时间：7/19 23:59 (UTC+8)</p>
-            <p><a href="../../rules-guideline.html">规则书写指南</a></p>
+            <p><a class="text-black hover:text-[#94a9b9] transition-colors duration-200" href="../../rules-guideline.html">规则书写指南</a></p>
           </div>
           <!--
           <div class="mt-3">
@@ -364,7 +330,7 @@
         <div class="mt-8 md:mt-0">              
           <h2 class="text-4xl lg:text-5xl font-heading-light">往期赛事</h2>
           <div class="flex flex-wrap items-start mt-3">
-            <a href="../mol1/index.html" class="hover:text-[#94a9b9] transition-200"><figure class="text-center">
+            <a href="../mol1/index.html" class="hover:text-[#94a9b9] transition-colors transition-200"><figure class="text-center">
               <img
                 src="../../images/mol1_logo.png"
                 alt="MOL1"
@@ -372,7 +338,7 @@
               />
               <figcaption class="mt-2">MOL1</figcaption>
             </figure></a>
-            <a href="../mol2/index.html" class="hover:text-[#94a9b9] transition-200"><figure class="text-center">
+            <a href="../mol2/index.html" class="hover:text-[#94a9b9] transition-colors transition-200"><figure class="text-center">
               <img
                 src="../../images/mol2_logo.png"
                 alt="MOL2"
@@ -380,7 +346,7 @@
               />
               <figcaption class="mt-2">MOL2</figcaption>
             </figure></a>
-            <a href="../mol3/index.html" class="hover:text-[#94a9b9] transition-200"><figure class="text-center">
+            <a href="../mol3/index.html" class="hover:text-[#94a9b9] transition-colors transition-200"><figure class="text-center">
               <img
                 src="../../images/mol3_logo.png"
                 alt="MOL3"
@@ -388,7 +354,7 @@
               />
               <figcaption class="mt-2">MOL3</figcaption>
             </figure></a>
-            <a href="https://mol4.cn/" class="hover:text-[#94a9b9] transition-200"><figure class="text-center">
+            <a href="https://mol4.cn/" class="hover:text-[#94a9b9] transition-colors transition-200"><figure class="text-center">
               <img
                 src="../../images/mol4_logo.png"
                 alt="MOL4"
@@ -396,7 +362,7 @@
               />
               <figcaption class="mt-2">MOL4</figcaption>
             </figure></a>
-            <a href="https://molmeta.cn/" class="hover:text-[#94a9b9] transition-200"><figure class="text-center">
+            <a href="https://molmeta.cn/" class="hover:text-[#94a9b9] transition-colors transition-200"><figure class="text-center">
               <img
                 src="../../images/molmeta_logo.png"
                 alt="MOL META"
@@ -405,7 +371,7 @@
               <figcaption class="mt-2">MOL META</figcaption>
             </figure></a>
           </div>
-          <p><a href="../../logo_design.html">关于LOGO</a></p>
+          <p><a href="../../logo_design.html" class="text-black hover:text-[#94a9b9] transition-colors duration-200">关于LOGO</a></p>
         </div>
       </div>
     </footer>
