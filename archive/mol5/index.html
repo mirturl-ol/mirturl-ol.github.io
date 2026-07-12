@@ -30,8 +30,8 @@
                 首页</a>
               <a class="text-black hover:text-[#94a9b9] transition-colors duration-200" href="#announcements">
                 公告</a>
-              <a class="text-black hover:text-[#94a9b9] transition-colors duration-200" href="#rules">
-                规则</a>
+              <a class="text-black hover:text-[#94a9b9] transition-colors duration-200" href="#intro">
+                介绍</a>
             </div>
           </div>
 
@@ -66,11 +66,11 @@
         <!-- Mobile-only title + countdown over image -->
         <div class="absolute bottom-0 w-full flex justify-center md:hidden">
           <div class="w-full text-left px-6 py-8 bg-gradient-to-b from-transparent to-black">
-            <h1 class="font-heading-dark text-5xl text-left ml-1 mb-5 text-white md:text-[#94a9b9] xl:text-7xl">MOL5即将开始</h1>
+            <h1 class="font-heading-dark text-5xl text-left ml-1 mb-5 text-white md:text-[#94a9b9] xl:text-7xl">MOL5进行中</h1>
 
             <!-- Mobile countdown (single row, flex) -->
             <div class="flex items-center gap-4 max-w-2xl mx-auto font-body-dark ml-2 font-normal text-white">
-              敬请期待 / 阅读<a href="#intro" class="em-light">赛事介绍</a>
+              距离比赛结束还有
               <div class="flex items-center gap-1 font-normal">
                 <div class="relative overflow-hidden h-10 w-5 flex items-center justify-center">
                   <div class="animate-slide-down em-dark md:text-[#94a9b9] countdown">0</div>
@@ -103,12 +103,12 @@
       <!-- RIGHT: Desktop-only white panel (title → countdown (2 lines) → gold boxes) -->
       <div class="hidden md:flex md:col-span-1 md:bg-white md:flex-col md:justify-center md:max-h-[90vh] xl:w-[50vw]">
         <!-- Title (light + black text) -->
-        <h1 class="font-heading-light text-5xl text-left mb-6 text-[#94a9b9] xl:text-7xl">MOL5即将开始</h1>
+        <h1 class="font-heading-light text-5xl text-left mb-6 text-[#94a9b9] xl:text-7xl">MOL5进行中</h1>
 
         <!-- Desktop countdown: two lines (label on its own line, values on next line) -->
         <div class="font-body-light text-xl">
-          敬请期待 / 阅读<a href="#intro" class="em-light">赛事介绍</a>
-          <div class="text-base mb-2">距离比赛开始还有</div>
+        
+          <div class="text-base mb-2">距离比赛结束还有</div>
           <div class="flex items-center gap-4">
             <div class="flex items-center gap-1">
               <div class="relative overflow-hidden h-10 w-5 flex items-center justify-center">
@@ -137,54 +137,166 @@
           </div>
         </div>
         <!-- Gold boxes (inside header on desktop) -->
-        <!--
+        
         <div class="mt-8">
           <div class="flex flex-row flex-wrap gap-3">
-            <a href="#"
+            <a href="mol-5-indiv-prob.zh.pdf" target="_blank"
               class="group flex w-[40%] min-w-[200px] items-center p-4 border-2 border-[#94a9b9] bg-white rounded-none
                       transition-colors duration-200 hover:bg-[#94a9b9] cursor-pointer
                       focus:outline-none focus:ring-2 focus:ring-[#94a9b9]/40"
-              aria-label="个人赛">
-              <svg class="h-8 w-8 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M20 21a8 8 0 1 0-16 0"></path>
-                <circle cx="12" cy="7" r="4"></circle>
+              aria-label="中文卷">
+              <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                <text x="12" y="12"
+                      fill="currentColor"
+                      font-size="15"
+                      font-weight="600"
+                      font-family="Arial, sans-serif"
+                      text-anchor="middle"
+                      dominant-baseline="central">
+                  CN
+                </text>
               </svg>
               <div class="ml-3 leading-tight">
-                <div class="text-2xl group-hover:text-white font-heading-light">个人赛</div>
+                <div class="text-2xl group-hover:text-white font-heading-light">中文卷</div>
                 <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">点击下载PDF</div>
+              </div>
+            </a>
+            <a href="mol-5-indiv-prob.zh.pdf" target="_blank"
+              class="group flex w-[40%] min-w-[200px] items-center p-4 border-2 border-[#94a9b9] bg-white rounded-none
+                      transition-colors duration-200 hover:bg-[#94a9b9] cursor-pointer
+                      focus:outline-none focus:ring-2 focus:ring-[#94a9b9]/40"
+              aria-label="英文卷">
+              <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                <text x="12" y="12"
+                      fill="currentColor"
+                      font-size="15"
+                      font-weight="600"
+                      font-family="Arial, sans-serif"
+                      text-anchor="middle"
+                      dominant-baseline="central">
+                  EN
+                </text>
+              </svg>
+              <div class="ml-3 leading-tight">
+                <div class="text-2xl group-hover:text-white font-heading-light">English</div>
+                <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">Click to download</div>
+              </div>
+            </a>
+            <a href="mol-5-indiv-prob.media.zip" target="_blank"
+              class="group flex w-[40%] min-w-[200px] items-center p-4 border-2 border-[#94a9b9] bg-white rounded-none
+                      transition-colors duration-200 hover:bg-[#94a9b9] cursor-pointer
+                      focus:outline-none focus:ring-2 focus:ring-[#94a9b9]/40"
+              aria-label="附加材料">
+              <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- Folder -->
+                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+                <!-- Zipper -->
+                <line x1="12" y1="8" x2="12" y2="16"/>
+                <rect x="11" y="8" width="2" height="1"/>
+                <rect x="11" y="10" width="2" height="1"/>
+                <rect x="11" y="12" width="2" height="1"/>
+                <rect x="11" y="14" width="2" height="1"/>
+                <path d="M11 16h2v2h-2z"/>
+              </svg>
+              <div class="ml-3 leading-tight">
+                <div class="text-2xl group-hover:text-white font-heading-light">附加材料</div>
+                <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">重要！请下载</div>
               </div>
             </a>
           </div>
         </div>
-        -->
+        
       
       </div>
     </header>
 
     <!-- FIRST SECTION (hide on desktop since boxes live in header on md+) -->
     <section class="w-full flex justify-center px-4 pt-0 pb-6 mt-8 md:hidden">
-      <!--
-      <div class="flex flex-row flex-nowrap items-stretch gap-3 md:flex-column">
-        <a href="#"
+      
+      <div class="flex flex-row flex-wrap items-stretch gap-3 md:flex-column">
+        <a href="mol-5-indiv-prob.zh.pdf"
           class="group flex shrink-0 w-[42.5vw] items-center p-4 border-2 border-[#94a9b9] bg-white rounded-none
                 transition-colors duration-200 hover:bg-[#94a9b9] cursor-pointer
                 focus:outline-none focus:ring-2 focus:ring-[#94a9b9]/40"
-          aria-label="个人赛">
+          aria-label="中文卷">
           <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20 21a8 8 0 1 0-16 0"></path>
-            <circle cx="12" cy="7" r="4"></circle>
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+            <text x="12" y="12"
+                  fill="currentColor"
+                  font-size="15"
+                  font-weight="700"
+                  font-family="Arial, sans-serif"
+                  text-anchor="middle"
+                  dominant-baseline="central">
+              CN
+            </text>
           </svg>
           <div class="ml-3 sm:ml-4 leading-tight">
-            <div class="text-2xl lg:text-3xl group-hover:text-white font-heading-light">个人赛</div>
+            <div class="text-2xl lg:text-3xl group-hover:text-white font-heading-light">中文卷</div>
             <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">点击下载PDF</div>
           </div>
         </a>
-        -->
-        
+        <a href="mol-5-indiv-prob.en.pdf"
+          class="group flex shrink-0 w-[42.5vw] items-center p-4 border-2 border-[#94a9b9] bg-white rounded-none
+                transition-colors duration-200 hover:bg-[#94a9b9] cursor-pointer
+                focus:outline-none focus:ring-2 focus:ring-[#94a9b9]/40"
+          aria-label="英文卷">
+          <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+            <text x="12" y="12"
+                  fill="currentColor"
+                  font-size="15"
+                  font-weight="700"
+                  font-family="Arial, sans-serif"
+                  text-anchor="middle"
+                  dominant-baseline="central">
+              EN
+            </text>
+          </svg>
+          <div class="ml-3 sm:ml-4 leading-tight">
+            <div class="text-2xl lg:text-3xl group-hover:text-white font-heading-light">English</div>
+            <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">Download</div>
+          </div>
+        </a>
+        <a href="mol-5-indiv-prob.media.zip"
+          class="group flex shrink-0 w-[42.5vw] items-center p-4 border-2 border-[#94a9b9] bg-white rounded-none
+                transition-colors duration-200 hover:bg-[#94a9b9] cursor-pointer
+                focus:outline-none focus:ring-2 focus:ring-[#94a9b9]/40"
+          aria-label="附加材料">
+          <svg class="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 text-[#94a9b9] transition-colors duration-200 group-hover:text-white"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <!-- Folder -->
+            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+            <!-- Zipper -->
+            <line x1="12" y1="8" x2="12" y2="16"/>
+            <rect x="11" y="8" width="2" height="1"/>
+            <rect x="11" y="10" width="2" height="1"/>
+            <rect x="11" y="12" width="2" height="1"/>
+            <rect x="11" y="14" width="2" height="1"/>
+            <path d="M11 16h2v2h-2z"/>
+          </svg>
+          <div class="ml-3 sm:ml-4 leading-tight">
+            <div class="text-2xl lg:text-3xl group-hover:text-white font-heading-light">附加材料</div>
+            <div class="text-sm text-[#94a9b9] group-hover:text-white font-normal">重要！请下载</div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -396,7 +508,7 @@
       const countdown = document.getElementsByClassName("countdown");
       function countdown_time(){
           const currentDate = new Date();
-          const targetDate = new Date("2026-07-13T00:00:00");
+          const targetDate = new Date("2026-07-19T16:00:00Z");
           const dayLeft = Math.floor((targetDate.getTime()-currentDate.getTime())/86400000);
           const hrLeft = Math.floor((targetDate.getTime()-currentDate.getTime())/3600000) % 24;
           const minLeft = Math.floor((targetDate.getTime()-currentDate.getTime())/60000) % 60;
